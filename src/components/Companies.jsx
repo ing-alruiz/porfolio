@@ -4,6 +4,7 @@ import mobilzeLogo from "../assets/images/companies/Migrations Logo (White).svg"
 import ex2Logo from "../assets/images/companies/EXSquared-Orange-svg-1.svg";
 import revityLogo from "../assets/images/companies/revvity-logo.png";
 import intelLogo from "../assets/images/companies/intel-header-logo.svg";
+import hclLogo from "../assets/images/companies/hcl-logo.svg";
 
 const companies = [
   {
@@ -30,6 +31,12 @@ const companies = [
     url: "https://www.intel.la/",
     position: "Technical Lead",
   },
+  {
+    name: "HCL Technologies",
+    img: hclLogo,
+    url: "https://www.hcltech.com/",
+    position: "Technical Lead",
+  },
 ];
 
 export default function Companies() {
@@ -40,7 +47,7 @@ export default function Companies() {
           Favourite Clients
         </div>
         <h2 className={styles.heading}>
-          Work With Trusted Comapny.
+          Work With Trusted Brands.
         </h2>
         <div className={styles.grid}>
           {companies.map((company, idx) => (

@@ -1,0 +1,23 @@
+{
+    "name": "Alberto",
+    "lastName": "Ruiz",
+    "dateOfBirth": "30/07/1995",
+    "phone": "+1 (555) 123-4567",
+    "email": "your.email@example.com",
+    "nationality": "Costarrican",
+    "currentOccupation": "Your Current Job Title",
+    "location": {
+        "city": "Your City",
+        "country": "Your Country"
+    },
+    "social": {
+        "linkedin": "https://linkedin.com/in/yourprofile",
+        "github": "https://github.com/yourusername",
+        "twitter": "https://twitter.com/yourusername"
+    },
+    "bio": "A brief description about yourself and your professional background.",
+    "skills": ["JavaScript", "React", "Node.js", "CSS", "HTML"],
+    "experience": "X+ years",
+    "availability": "Available for freelance work",
+    "logoLocation": "/albertoLogo.png"
+}

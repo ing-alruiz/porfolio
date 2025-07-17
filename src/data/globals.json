@@ -1,0 +1,15 @@
+{
+    "logoLocation": "/albertoLogo.png",
+    "socialLinks": [
+        { "icon": "fa fa-facebook", "url": "https://facebook.com" },
+        { "icon": "fa fa-x-twitter", "url": "https://twitter.com" },
+        { "icon": "fa fa-linkedin", "url": "https://linkedin.com" },
+        { "icon": "fa fa-youtube-play", "url": "https://youtube.com" }
+    ],
+    "roles": [
+        "Full Stack Developer",
+        "Frontend Developer",
+        "React Enthusiast",
+        ".Net Developer"
+    ]
+}
