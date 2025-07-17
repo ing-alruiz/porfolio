@@ -4,14 +4,14 @@ const theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#FFD700', // Gold
+      main: '#C5A25D', // Gold
     },
     background: {
       default: '#111111', // Black
       paper: '#181818',
     },
     text: {
-      primary: '#FFD700',
+      primary: '#C5A25D',
       secondary: '#FFFFFF',
     },
   },

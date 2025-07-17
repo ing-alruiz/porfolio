@@ -1,0 +1,45 @@
+{
+  "welcome": "Welcome to my portfolio!",
+  "language": "Language",
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "service": "Service",
+    "experience": "Experience",
+    "skills": "Skills",
+    "portfolio": "Portfolio",
+    "facts": "Facts",
+    "testimonials": "Testimonials",
+    "posts": "Posts",
+    "contact": "Contact",
+    "downloadCV": "Get my CV"
+  },
+  "hero": {
+    "hello": "HELLO I'M",
+    "passionate": "A Passionate",
+    "downloadCV": "Get my CV"
+  },
+  "companies": {
+    "label": "Favourite Clients",
+    "heading": "Worked With Trusted Brands."
+  },
+  "about": {
+    "title": "ABOUT ME",
+    "heading": "I Develop System that Works",
+    "description1": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laboru doloremque laudantium, totaeaque ipsa quae ab illo inven tore veritatis et quasi architecto beatae vitae.",
+    "description2": "Oremque laudantium, totaeaque ipsa quae",
+    "name": "Name",
+    "phone": "Phone",
+    "age": "Age",
+    "email": "Email",
+    "occupation": "Occupation",
+    "nationality": "Nationality",
+    "downloadCV": "DOWNLOAD MY CV"
+  },
+  "portfolio": {
+    "title": "My Work"
+  },
+  "footer": {
+    "copyright": "All rights reserved."
+  }
+}

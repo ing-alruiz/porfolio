@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Portfolio.module.css";
+import { useTranslation } from "react-i18next";
 
 const projects = [
   {
@@ -35,9 +36,11 @@ const projects = [
 ];
 
 function Portfolio() {
+  const { t } = useTranslation();
+
   return (
     <section id="portfolio" className={styles.portfolioSection}>
-      <h2 className={styles.portfolioTitle}>My Work</h2>
+      <h2 className={styles.portfolioTitle}>{t("portfolio.title")}</h2>
       <div className={styles.portfolioDividerWrapper}>
         <div className={styles.portfolioDivider} />
       </div>

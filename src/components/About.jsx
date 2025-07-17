@@ -1,7 +1,11 @@
 import React from "react";
 import styles from "./About.module.css";
+import { useTranslation } from "react-i18next";
+import personalInfo from "../data/personal-info.json";
 
 export default function About() {
+  const { t, i18n } = useTranslation();
+
   return (
     <section id="about" className={styles.aboutSection}>
       {/* Decorative shapes */}
@@ -53,13 +57,13 @@ export default function About() {
           <div className={styles.profileWrapper}>
             <img
               src="https://randomuser.me/api/portraits/men/32.jpg"
-              alt="James Smith"
+              alt={personalInfo.name + " " + personalInfo.lastName}
               className={styles.profileImage}
             />
             <div className={styles.downloadCv}>
               <a href="/cv.pdf" className={styles.downloadBtn}>
                 <i className="fa fa-download"></i>
-                <span>DOWNLOAD MY CV</span>
+                <span>{t("about.downloadCV")}</span>
               </a>
             </div>
           </div>
@@ -67,57 +71,50 @@ export default function About() {
 
         <div className={styles.right}>
           <div className={styles.sectionHeader}>
-            <h3 className={styles.sectionTitle}>ABOUT ME</h3>
+            <h3 className={styles.sectionTitle}>{t("about.title")}</h3>
             <h1 className={styles.mainTitle}>
-              I Develop System that Works
+              {t("about.heading")}
             </h1>
           </div>
 
           <div className={styles.description}>
-            <p>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
-              officia deserunt mollit anim id est laboru doloremque laudantium, 
-              totaeaque ipsa quae ab illo inven tore veritatis et quasi architecto 
-              beatae vitae.
-            </p>
-            <p>
-              Oremque laudantium, totaeaque ipsa quae
-            </p>
+            <p>{t("about.description1")}</p>
+            <p>{t("about.description2")}</p>
           </div>
 
           <div className={styles.personalInfo}>
             <div className={styles.infoGrid}>
               <div className={styles.infoItem}>
-                <span className={styles.label}>Name</span>
-                <span className={styles.value}>James Smith</span>
+                <span className={styles.label}>{t("about.name")}</span>
+                <span className={styles.value}>{personalInfo.name} {personalInfo.lastName}</span>
               </div>
               <div className={styles.infoItem}>
-                <span className={styles.label}>Phone</span>
-                <span className={styles.value}>+123 456 7890</span>
+                <span className={styles.label}>{t("about.phone")}</span>
+                <span className={styles.value}>{personalInfo.phone}</span>
               </div>
               <div className={styles.infoItem}>
-                <span className={styles.label}>Age</span>
+                <span className={styles.label}>{t("about.age")}</span>
                 <span className={styles.value}>29 Years</span>
               </div>
               <div className={styles.infoItem}>
-                <span className={styles.label}>Email</span>
-                <span className={styles.value}>hello@thames.com</span>
+                <span className={styles.label}>{t("about.email")}</span>
+                <span className={styles.value}>{personalInfo.email}</span>
               </div>
               <div className={styles.infoItem}>
-                <span className={styles.label}>Occupation</span>
-                <span className={styles.value}>System Engineer</span>
+                <span className={styles.label}>{t("about.occupation")}</span>
+                <span className={styles.value}>{personalInfo.currentOccupation[i18n.language] || personalInfo.currentOccupation.en}</span>
               </div>
               <div className={styles.infoItem}>
-                <span className={styles.label}>Nationality</span>
-                <span className={styles.value}>Bangladeshi</span>
+                <span className={styles.label}>{t("about.nationality")}</span>
+                <span className={styles.value}>{personalInfo.nationality[i18n.language] || personalInfo.nationality.en}</span>
               </div>
             </div>
           </div>
 
           <div className={styles.signature}>
-            <div className={styles.signatureText}>Bruce Wayne</div>
+            <div className={styles.signatureText}>{personalInfo.name} {personalInfo.lastName}</div>
             <div className={styles.signatureTitle}>
-              <strong>BRUCE WAYNE</strong> Software Architect, Google Inc.
+              <strong>{personalInfo.name.toUpperCase()} {personalInfo.lastName.toUpperCase()}</strong> {personalInfo.currentOccupation[i18n.language] || personalInfo.currentOccupation.en}
             </div>
           </div>
         </div>

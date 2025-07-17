@@ -1,0 +1,45 @@
+{
+  "welcome": "¡Bienvenido a mi portafolio!",
+  "language": "Idioma",
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "service": "Servicios",
+    "experience": "Experiencia",
+    "skills": "Habilidades",
+    "portfolio": "Portafolio",
+    "facts": "Datos",
+    "testimonials": "Testimonios",
+    "posts": "Publicaciones",
+    "contact": "Contacto",
+    "downloadCV": "Descargar CV"
+  },
+  "hero": {
+    "hello": "HOLA SOY",
+    "passionate": "Un Apasionado",
+    "downloadCV": "Descargar CV"
+  },
+  "companies": {
+    "label": "Clientes Favoritos",
+    "heading": "Trabaje con Marcas de Confianza."
+  },
+  "about": {
+    "title": "ACERCA DE MÍ",
+    "heading": "Desarrollo Sistemas que Funcionan",
+    "description1": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laboru doloremque laudantium, totaeaque ipsa quae ab illo inven tore veritatis et quasi architecto beatae vitae.",
+    "description2": "Oremque laudantium, totaeaque ipsa quae",
+    "name": "Nombre",
+    "phone": "Teléfono",
+    "age": "Edad",
+    "email": "Email",
+    "occupation": "Ocupación",
+    "nationality": "Nacionalidad",
+    "downloadCV": "DESCARGAR MI CV"
+  },
+  "portfolio": {
+    "title": "Mi Trabajo"
+  },
+  "footer": {
+    "copyright": "Todos los derechos reservados."
+  }
+}

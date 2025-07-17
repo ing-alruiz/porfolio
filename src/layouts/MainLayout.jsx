@@ -7,7 +7,9 @@ import styles from "./MainLayout.module.css";
 function MainLayout() {
   return (
     <>
-      <Navbar />
+      <div style={{ position: 'relative', zIndex: 9999 }}>
+        <Navbar />
+      </div>
       <div className={styles.mainContent}>
         <Outlet />
       </div>

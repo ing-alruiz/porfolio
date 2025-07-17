@@ -3,29 +3,74 @@ import styles from "./Navbar.module.css";
 import globals from '../data/globals.json';
 import { useTranslation } from "react-i18next";
 import personalInfo from '../data/personal-info.json';
-
-const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Service", href: "#service" },
-  { label: "Experience", href: "#experience" },
-  { label: "Skills", href: "#skills" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Facts", href: "#facts" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Posts", href: "#posts" },
-  { label: "Contact", href: "#contact" },
-  { label: "Download CV", href: "/cv.pdf", download: true },
-];
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useScrollTo } from "../hooks/useScrollTo";
 
 function Navbar() {
-  const [active, setActive] = React.useState(window.location.hash || "#home");
+  const { t, i18n } = useTranslation();
+  const [active, setActive] = React.useState("#home");
+  const [languageDropdownOpen, setLanguageDropdownOpen] = React.useState(false);
+  const scrollToSection = useScrollTo();
 
+  const navItems = [
+    { label: t("nav.home"), href: "#home" },
+    { label: t("nav.about"), href: "#about" },
+    { label: t("nav.service"), href: "#service" },
+    { label: t("nav.experience"), href: "#experience" },
+    { label: t("nav.skills"), href: "#skills" },
+    { label: t("nav.portfolio"), href: "#portfolio" },
+    { label: t("nav.facts"), href: "#facts" },
+    { label: t("nav.testimonials"), href: "#testimonials" },
+    { label: t("nav.posts"), href: "#posts" },
+    { label: t("nav.contact"), href: "#contact" },
+    { label: t("nav.downloadCV"), href: "/cv.pdf", download: true },
+  ];
+
+  const languages = [
+    { code: 'en', name: 'English', flag: '🇺🇸' },
+    { code: 'es', name: 'Español', flag: '🇪🇸' }
+  ];
+
+  const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
+
+  // Track active section on scroll
   React.useEffect(() => {
-    const onHashChange = () => setActive(window.location.hash || "#home");
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'service', 'experience', 'skills', 'portfolio', 'facts', 'testimonials', 'posts', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const element = document.getElementById(sections[i]);
+        if (element && element.offsetTop <= scrollPosition) {
+          setActive(`#${sections[i]}`);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call once to set initial state
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavClick = (e, item) => {
+    e.preventDefault();
+    
+    if (item.download) {
+      // Handle download link
+      window.open(item.href, '_blank');
+      return;
+    }
+    
+    // Handle section navigation
+    scrollToSection(item.href);
+    setActive(item.href);
+  };
+
+  const changeLanguage = (langCode) => {
+    i18n.changeLanguage(langCode);
+    setLanguageDropdownOpen(false);
+  };
 
   return (
     <nav className={styles.navbar}>
@@ -45,13 +90,36 @@ function Navbar() {
               className={
                 styles.navLink +
                 (active === item.href ? " " + styles.active : "") +
-                (item.label === "Download CV" ? " " + styles.downloadCv : "")
+                (item.label === t("nav.downloadCV") ? " " + styles.downloadCv : "")
               }
-              {...(item.download ? { download: true, target: "_blank", rel: "noopener noreferrer" } : {})}
+              onClick={(e) => handleNavClick(e, item)}
             >
               {item.label}
             </a>
           ))}
+          <div className={styles.languageSelector}>
+            <button
+              className={styles.languageButton}
+              onClick={() => setLanguageDropdownOpen(!languageDropdownOpen)}
+            >
+              <FontAwesomeIcon icon={['fas', 'earth-americas']} /> {currentLanguage.code.toUpperCase()}
+            </button>
+            {languageDropdownOpen && (
+              <div className={styles.languageDropdown}>
+                {languages.map((lang) => (
+                  <div
+                    key={lang.code}
+                    className={`${styles.languageOption} ${
+                      i18n.language === lang.code ? styles.selected : ""
+                    }`}
+                    onClick={() => changeLanguage(lang.code)}
+                  >
+                    {lang.flag} {lang.name}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </nav>

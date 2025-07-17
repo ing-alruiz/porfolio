@@ -1,54 +1,42 @@
 import React from "react";
 import styles from "./Companies.module.css";
-import mobilzeLogo from "../assets/images/companies/Migrations Logo (White).svg";
-import ex2Logo from "../assets/images/companies/EXSquared-Orange-svg-1.svg";
-import revityLogo from "../assets/images/companies/revvity-logo.png";
-import intelLogo from "../assets/images/companies/intel-header-logo.svg";
-import hclLogo from "../assets/images/companies/hcl-logo.svg";
+import { useTranslation } from "react-i18next";
+import GLOBALS from "../data/globals.json";
 
-const companies = [
-  {
-    name: "Mobilze",
-    img: mobilzeLogo,
-    url: "https://mobilze.com",
-    position: "Software Developer II",
-  },
-  {
-    name: "Ex2 OutCoding",
-    img: ex2Logo,
-    url: "https://latam.exsquared.com/",
-    position: ".Net Developer",
-  },
-  {
-    name: "Revvity",
-    img: revityLogo,
-    url: "https://www.revvity.com/",
-    position: ".Net Developer",
-  },
-  {
-    name: "Intel",
-    img: intelLogo,
-    url: "https://www.intel.la/",
-    position: "Technical Lead",
-  },
-  {
-    name: "HCL Technologies",
-    img: hclLogo,
-    url: "https://www.hcltech.com/",
-    position: "Technical Lead",
-  },
-];
+const companies = GLOBALS.companies;
 
 export default function Companies() {
+  const { t, i18n } = useTranslation();
+  const [loadedImages, setLoadedImages] = React.useState({});
+
+  React.useEffect(() => {
+    const loadImages = async () => {
+      const imagePromises = companies.map(async (company, index) => {
+        try {
+          const module = await import(company.imgPath);
+          return { index, src: module.default };
+        } catch (error) {
+          console.error(`Failed to load image for ${company.name}:`, error);
+          return { index, src: "" };
+        }
+      });
+
+      const results = await Promise.all(imagePromises);
+      const imageMap = {};
+      results.forEach(({ index, src }) => {
+        imageMap[index] = src;
+      });
+      setLoadedImages(imageMap);
+    };
+
+    loadImages();
+  }, []);
+
   return (
     <section className={styles.section}>
       <div className="container">
-        <div className={styles.label}>
-          Favourite Clients
-        </div>
-        <h2 className={styles.heading}>
-          Work With Trusted Brands.
-        </h2>
+        <div className={styles.label}>{t("companies.label")}</div>
+        <h2 className={styles.heading}>{t("companies.heading")}</h2>
         <div className={styles.grid}>
           {companies.map((company, idx) => (
             <a
@@ -60,15 +48,13 @@ export default function Companies() {
               style={{ textDecoration: "none" }}
             >
               <img
-                src={company.img}
+                src={loadedImages[idx] || ""}
                 alt={company.name}
                 className={styles.logo}
               />
-              <div className={styles.name}>
-                {company.name}
-              </div>
+              <div className={styles.name}>{company.name}</div>
               <div className={styles.position}>
-                {company.position}
+                {company.position[i18n.language] || company.position.en}
               </div>
             </a>
           ))}

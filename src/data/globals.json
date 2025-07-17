@@ -1,15 +1,74 @@
 {
     "logoLocation": "/albertoLogo.png",
     "socialLinks": [
-        { "icon": "fa fa-facebook", "url": "https://facebook.com" },
-        { "icon": "fa fa-x-twitter", "url": "https://twitter.com" },
-        { "icon": "fa fa-linkedin", "url": "https://linkedin.com" },
-        { "icon": "fa fa-youtube-play", "url": "https://youtube.com" }
+        { "icon": ["fab", "facebook-f"], "url": "https://facebook.com" },
+        { "icon": ["fab", "x-twitter"], "url": "https://twitter.com" },
+        { "icon": ["fab", "linkedin"], "url": "https://linkedin.com" },
+        { "icon": ["fab", "youtube"], "url": "https://youtube.com" }
     ],
-    "roles": [
-        "Full Stack Developer",
-        "Frontend Developer",
-        "React Enthusiast",
-        ".Net Developer"
-    ]
+    "companies": [
+        {
+            "name": "Mobilze",
+            "imgPath": "../assets/images/companies/Migrations Logo (White).svg",
+            "url": "https://www.mobilize.net/",
+            "position": {
+                "es": "Desarrollador de Software II",
+                "en": "Software Developer II"
+            }
+        },
+        {
+            "name": "Ex2 OutCoding",
+            "imgPath": "../assets/images/companies/EXSquared-Orange-svg-1.svg",
+            "url": "https://latam.exsquared.com/",
+            "position": {
+                "es": "Desarrollador .Net",
+                "en": ".Net Developer"
+            }
+        },
+        {
+            "name": "Revvity",
+            "imgPath": "../assets/images/companies/revvity-logo.png",
+            "url": "https://www.revvity.com/",
+            "position": {
+                "es": "Desarrollador .Net",
+                "en": ".Net Developer"
+            }
+        },
+        {
+            "name": "Intel",
+            "imgPath": "../assets/images/companies/intel-header-logo.svg",
+            "url": "https://www.intel.la/",
+            "position": {
+                "es": "Líder Técnico",
+                "en": "Full Stack Developer"
+            }
+        },
+        {
+            "name": "HCL Technologies",
+            "imgPath": "../assets/images/companies/hcl-logo.svg",
+            "url": "https://www.hcltech.com/",
+            "position": {
+                "es": "Líder Técnico",
+                "en": "Technical Lead"
+            }
+        }
+    ],
+    "roles": {
+        "es": [
+            "Desarrollador Full Stack",
+            "Desarrollador Frontend",
+            "Entusiasta de React",
+            "Desarrollador .Net",
+            "Ingeniero de Software",
+            "Desarrollador JavaScript"
+        ],
+        "en": [
+            "Full Stack Developer",
+            "Frontend Developer",
+            "React Enthusiast",
+            ".Net Developer",
+            "Software Engineer",
+            "JavaScript Developer"
+        ]
+    }
 }
