@@ -39,6 +39,10 @@ export default function Hero() {
   const roles = GLOBALS.roles[i18n.language] || GLOBALS.roles.en;
   const typedRole = useTypewriter(roles);
   
+  // Calculate years of experience
+  const startOfCareer = personalInfo.startofCareer || GLOBALS.startofCareer || 2020;
+  const yearsOfExperience = new Date().getFullYear() - startOfCareer;
+  
   // Debug log to check if roles are loaded
   React.useEffect(() => {
     console.log('Current language:', i18n.language);
@@ -171,8 +175,11 @@ export default function Hero() {
             <span className={styles.rolePrefix}>{t("hero.passionate")}</span>
             <span className={styles.role}>
               <span style={{ whiteSpace: "pre" }}>{typedRole}</span>
-              <span className={styles.cursor}>|</span>
+              <span className={styles.cursor}>_</span>
             </span>
+          </div>
+          <div className={styles.experienceLegend}>
+            +{yearsOfExperience}  {t("hero.yearsExperience")}
           </div>
           <a href="/cv.pdf" className={styles.sayHelloBtn}>
             {t("hero.downloadCV")}

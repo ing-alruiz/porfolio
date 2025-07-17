@@ -15,14 +15,11 @@ function Navbar() {
   const navItems = [
     { label: t("nav.home"), href: "#home" },
     { label: t("nav.about"), href: "#about" },
-    { label: t("nav.service"), href: "#service" },
     { label: t("nav.experience"), href: "#experience" },
     { label: t("nav.skills"), href: "#skills" },
     { label: t("nav.portfolio"), href: "#portfolio" },
-    { label: t("nav.facts"), href: "#facts" },
-    { label: t("nav.testimonials"), href: "#testimonials" },
-    { label: t("nav.posts"), href: "#posts" },
     { label: t("nav.contact"), href: "#contact" },
+    { label: t("nav.tips"), href: "#tips" },
     { label: t("nav.downloadCV"), href: "/cv.pdf", download: true },
   ];
 

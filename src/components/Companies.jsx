@@ -2,35 +2,25 @@ import React from "react";
 import styles from "./Companies.module.css";
 import { useTranslation } from "react-i18next";
 import GLOBALS from "../data/globals.json";
+import mobilzeLogo from "../assets/images/companies/Migrations Logo (White).svg";
+import ex2Logo from "../assets/images/companies/EXSquared-Orange-svg-1.svg";
+import revityLogo from "../assets/images/companies/revvity-logo.png";
+import intelLogo from "../assets/images/companies/intel-header-logo.svg";
+import hclLogo from "../assets/images/companies/hcl-logo.svg";
 
 const companies = GLOBALS.companies;
 
+// Create a mapping object for the imported images
+const imageMap = {
+  Mobilze: mobilzeLogo,
+  "Ex2 OutCoding": ex2Logo,
+  Revvity: revityLogo,
+  Intel: intelLogo,
+  "HCL Technologies": hclLogo,
+};
+
 export default function Companies() {
   const { t, i18n } = useTranslation();
-  const [loadedImages, setLoadedImages] = React.useState({});
-
-  React.useEffect(() => {
-    const loadImages = async () => {
-      const imagePromises = companies.map(async (company, index) => {
-        try {
-          const module = await import(company.imgPath);
-          return { index, src: module.default };
-        } catch (error) {
-          console.error(`Failed to load image for ${company.name}:`, error);
-          return { index, src: "" };
-        }
-      });
-
-      const results = await Promise.all(imagePromises);
-      const imageMap = {};
-      results.forEach(({ index, src }) => {
-        imageMap[index] = src;
-      });
-      setLoadedImages(imageMap);
-    };
-
-    loadImages();
-  }, []);
 
   return (
     <section className={styles.section}>
@@ -48,11 +38,11 @@ export default function Companies() {
               style={{ textDecoration: "none" }}
             >
               <img
-                src={loadedImages[idx] || ""}
+                src={imageMap[company.name] || ""}
                 alt={company.name}
                 className={styles.logo}
               />
-              <div className={styles.name}>{company.name}</div>
+              {/* <div className={styles.name}>{company.name}</div> */}
               <div className={styles.position}>
                 {company.position[i18n.language] || company.position.en}
               </div>

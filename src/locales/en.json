@@ -12,11 +12,13 @@
     "testimonials": "Testimonials",
     "posts": "Posts",
     "contact": "Contact",
+    "tips": "Dev Tips",
     "downloadCV": "Get my CV"
   },
   "hero": {
     "hello": "HELLO I'M",
     "passionate": "A Passionate",
+    "yearsExperience": " years of experience",
     "downloadCV": "Get my CV"
   },
   "companies": {

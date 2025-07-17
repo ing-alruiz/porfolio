@@ -12,11 +12,13 @@
     "testimonials": "Testimonios",
     "posts": "Publicaciones",
     "contact": "Contacto",
+    "tips": "Consejos de Desarrollo",
     "downloadCV": "Descargar CV"
   },
   "hero": {
     "hello": "HOLA SOY",
     "passionate": "Un Apasionado",
+    "yearsExperience": " años de experiencia",
     "downloadCV": "Descargar CV"
   },
   "companies": {
