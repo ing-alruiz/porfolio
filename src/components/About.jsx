@@ -52,69 +52,71 @@ export default function About() {
         />
       </svg>
 
-      <div className={styles.aboutContent}>
-        <div className={styles.left}>
-          <div className={styles.profileWrapper}>
-            <img
-              src="https://randomuser.me/api/portraits/men/32.jpg"
-              alt={personalInfo.name + " " + personalInfo.lastName}
-              className={styles.profileImage}
-            />
-            <div className={styles.downloadCv}>
-              <a href="/cv.pdf" className={styles.downloadBtn}>
-                <i className="fa fa-download"></i>
-                <span>{t("about.downloadCV")}</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.right}>
-          <div className={styles.sectionHeader}>
-            <h3 className={styles.sectionTitle}>{t("about.title")}</h3>
-            <h1 className={styles.mainTitle}>
-              {t("about.heading")}
-            </h1>
-          </div>
-
-          <div className={styles.description}>
-            <p>{t("about.description1")}</p>
-            <p>{t("about.description2")}</p>
-          </div>
-
-          <div className={styles.personalInfo}>
-            <div className={styles.infoGrid}>
-              <div className={styles.infoItem}>
-                <span className={styles.label}>{t("about.name")}</span>
-                <span className={styles.value}>{personalInfo.name} {personalInfo.lastName}</span>
-              </div>
-              <div className={styles.infoItem}>
-                <span className={styles.label}>{t("about.phone")}</span>
-                <span className={styles.value}>{personalInfo.phone}</span>
-              </div>
-              <div className={styles.infoItem}>
-                <span className={styles.label}>{t("about.age")}</span>
-                <span className={styles.value}>29 Years</span>
-              </div>
-              <div className={styles.infoItem}>
-                <span className={styles.label}>{t("about.email")}</span>
-                <span className={styles.value}>{personalInfo.email}</span>
-              </div>
-              <div className={styles.infoItem}>
-                <span className={styles.label}>{t("about.occupation")}</span>
-                <span className={styles.value}>{personalInfo.currentOccupation[i18n.language] || personalInfo.currentOccupation.en}</span>
-              </div>
-              <div className={styles.infoItem}>
-                <span className={styles.label}>{t("about.nationality")}</span>
-                <span className={styles.value}>{personalInfo.nationality[i18n.language] || personalInfo.nationality.en}</span>
+      <div className={styles.container}>
+        <h3 className="sectionTitle">{t("about.title")}</h3>
+        <div className={styles.aboutContent}>
+          <div className={styles.left}>
+            <div className={styles.profileWrapper}>
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt={personalInfo.name + " " + personalInfo.lastName}
+                className={styles.profileImage}
+              />
+              <div className={styles.downloadCv}>
+                <a href="/cv.pdf" className={styles.downloadBtn}>
+                  <i className="fa fa-download"></i>
+                  <span>{t("about.downloadCV")}</span>
+                </a>
               </div>
             </div>
           </div>
 
-          <div className={styles.signature}>
-            <div className={styles.signatureText}>{personalInfo.name} {personalInfo.lastName}</div>
-            <div className={styles.signatureTitle}>
-              <strong>{personalInfo.name.toUpperCase()} {personalInfo.lastName.toUpperCase()}</strong> {personalInfo.currentOccupation[i18n.language] || personalInfo.currentOccupation.en}
+          <div className={styles.right}>
+            <div className={styles.sectionHeader}>
+              <h1 className={styles.mainTitle}>
+                {t("about.heading")}
+              </h1>
+            </div>
+
+            <div className={styles.description}>
+              <p>{t("about.description1")}</p>
+              <p>{t("about.description2")}</p>
+            </div>
+
+            <div className={styles.personalInfo}>
+              <div className={styles.infoGrid}>
+                <div className={styles.infoItem}>
+                  <span className={styles.label}>{t("about.name")}</span>
+                  <span className={styles.value}>{personalInfo.name} {personalInfo.lastName}</span>
+                </div>
+                <div className={styles.infoItem}>
+                  <span className={styles.label}>{t("about.phone")}</span>
+                  <span className={styles.value}>{personalInfo.phone}</span>
+                </div>
+                <div className={styles.infoItem}>
+                  <span className={styles.label}>{t("about.age")}</span>
+                  <span className={styles.value}>29 Years</span>
+                </div>
+                <div className={styles.infoItem}>
+                  <span className={styles.label}>{t("about.email")}</span>
+                  <span className={styles.value}>{personalInfo.email}</span>
+                </div>
+                <div className={styles.infoItem}>
+                  <span className={styles.label}>{t("about.occupation")}</span>
+                  <span className={styles.value}>{personalInfo.currentOccupation[i18n.language] || personalInfo.currentOccupation.en}</span>
+                </div>
+                <div className={styles.infoItem}>
+                  <span className={styles.label}>{t("about.nationality")}</span>
+                  <span className={styles.value}>{personalInfo.nationality[i18n.language] || personalInfo.nationality.en}</span>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.signature}>
+              <div className={styles.signatureText}>{personalInfo.name} {personalInfo.lastName}</div>
+              <div className={styles.signatureTitle}>
+                <strong>{personalInfo.name.toUpperCase()} {personalInfo.lastName.toUpperCase()}</strong> {personalInfo.currentOccupation[i18n.language] || personalInfo.currentOccupation.en}
+              </div>
             </div>
           </div>
         </div>

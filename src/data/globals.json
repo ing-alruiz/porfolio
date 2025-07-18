@@ -70,5 +70,110 @@
             "Software Engineer",
             "JavaScript Developer"
         ]
-    }
+    },
+    "experience": [
+        {
+            "company": "HCL Tech (Intel)",
+            "position": {
+                "es": "Desarrollador Full Stack",
+                "en": "Full Stack Developer"
+            },
+            "location": "Heredia, Costa Rica",
+            "period": "2024 - Current",
+            "keyPoints": {
+                "es": [
+                    "Creé una aplicación de Windows Forms usando .NET y base de datos Oracle para exportar experimentos científicos y sus resultados de análisis, reconociendo documentos duplicados, optimizando procedimientos para reducir el tiempo de procesamiento mientras se mantiene el registro de errores adecuado y la gestión.",
+                    "Reestructuré y adapté una pieza de software creada por un ingeniero no desarrollador colaborador para cumplir con los requisitos del cliente, desde Oracle database hasta Intel early access.",
+                    "Mejoré la estructura del equipo haciendo la transición de métodos tradicionales de desarrollo de software a metodologías Agile con planning e inteligencia artificial.",
+                    "Instruí y gestioné múltiples clientes en el uso de APIs y proporcioné conocimiento general de los productos de software de la compañía."
+                ],
+                "en": [
+                    "Created a Windows Form application using .NET and Oracle database to export scientific experiments and their analysis scan results, recognizing duplicate documents, optimizing procedures to reduce processing time while maintaining proper error logging and management.",
+                    "Restructured and adapted a piece of software created by a non-software engineer collaborator to meet client requirements, from Oracle database into Intel early access.",
+                    "Improved team structure by transitioning from traditional software development methods to Agile methodologies with planning and artificial intelligence.",
+                    "Instructed and managed multiple customers on the use of APIs and provided general knowledge of the company's software products."
+                ]
+            }
+        },
+        {
+            "company": "EX2 OutCoding (Revvity)",
+            "position": {
+                "es": "Desarrollador .Net",
+                "en": ".Net Developer"
+            },
+            "location": "San José, Costa Rica",
+            "period": "2022 - 2024",
+            "keyPoints": {
+                "es": [
+                    "Creé una aplicación de Windows Forms usando .NET y base de datos Oracle para exportar experimentos científicos y sus resultados de análisis, reconociendo documentos duplicados, optimizando procedimientos para reducir el tiempo de procesamiento mientras se mantiene el registro de errores adecuado y la gestión.",
+                    "Reestructuré y adapté una pieza de software creada por un ingeniero no desarrollador colaborador para cumplir con los requisitos del cliente, desde Oracle database hasta Intel early access.",
+                    "Mejoré la estructura del equipo haciendo la transición de métodos tradicionales de desarrollo de software a metodologías Agile con planning e inteligencia artificial.",
+                    "Instruí y gestioné múltiples clientes en el uso de APIs y proporcioné conocimiento general de los productos de software de la compañía."
+                ],
+                "en": [
+                    "Created a Windows Form application using .NET and Oracle database to export scientific experiments and their analysis scan results, recognizing duplicate documents, optimizing procedures to reduce processing time while maintaining proper error logging and management.",
+                    "Restructured and adapted a piece of software created by a non-software engineer collaborator to meet client requirements, from Oracle database into Intel early access.",
+                    "Improved team structure by transitioning from traditional software development methods to Agile methodologies with planning and artificial intelligence.",
+                    "Instructed and managed multiple customers on the use of APIs and provided general knowledge of the company's software products."
+                ]
+            }
+        },
+        {
+            "company": "Mobilize.net",
+            "position": {
+                "es": "Desarrollador de Software II, Ingeniero de Migración",
+                "en": "Software Developer II, Migration Engineer"
+            },
+            "location": "San José, Costa Rica",
+            "period": "2020 - 2022",
+            "keyPoints": {
+                "es": [
+                    "Entregando más de 4 proyectos de trabajo en equipo a tiempo al cliente.",
+                    "Creé y ejecuté 2 proyectos de Migración de ASP Net en un entorno Windows y Windows Forms.",
+                    "Colaboré con múltiples clientes en múltiples proyectos al mismo tiempo.",
+                    "Dirigí y ejecuté 2 proyectos en un entorno de desarrollo y cliente Windows Forms."
+                ],
+                "en": [
+                    "Delivering more than 4 teamwork projects on time to the client.",
+                    "Created and executed 2 ASP Net Migration projects on Windows and Windows Forms environment.",
+                    "Collaborate with multiple clients on multiple projects at the same time.",
+                    "Directed and executed 2 projects on Windows Forms development and client environment."
+                ]
+            }
+        },
+        {
+            "company": "Mobilize.net - Internship",
+            "position": {
+                "es": "Desarrollador Full Stack",
+                "en": "Full Stack Developer"
+            },
+            "location": "San José, Costa Rica",
+            "period": "2018 - 2019",
+            "keyPoints": {
+                "es": [
+                    "Creé una aplicación web IDE en Angular 5 para edición completa de entorno de desarrollo basado en un nuevo lenguaje de programación creado por la compañía."
+                ],
+                "en": [
+                    "Created a Web Application IDE on Angular 5 for complete editing development environment based on a new programming language created by the company."
+                ]
+            }
+        },
+        {
+            "company": "Colono Agropecuario - Avantica - Tecnológico de Costa Rica",
+            "position": {
+                "es": "Desarrollador de Aplicaciones de Agricultura de Precisión",
+                "en": "Precision Agriculture App Developer"
+            },
+            "location": "North Zone, Costa Rica",
+            "period": "2017 (1st Semester)",
+            "keyPoints": {
+                "es": [
+                    "Mejoré de 48 horas a 4 horas el rendimiento de una aplicación Django especializada en procesamiento de imágenes."
+                ],
+                "en": [
+                    "Improved from 48 hours to 4 hours the performance of a Django application specialized in image processing."
+                ]
+            }
+        }
+    ]
 }

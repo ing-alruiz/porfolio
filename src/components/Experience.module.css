@@ -1,0 +1,265 @@
+.experienceSection {
+  padding: 80px 0;
+  background: var(--color-dark);
+  position: relative;
+}
+
+.sectionTitle {
+  color: #7c7e89;
+  font-size: 18px;
+  margin-bottom: 60px;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: #7c7e89;
+}
+
+.timeline {
+  
+  position: relative;
+  padding: 0 20px;
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 0.6fr 60px 1.4fr;
+  gap: 40px;
+  margin-bottom: 60px;
+  align-items: flex-start;
+}
+
+.timelineItem:last-child {
+  margin-bottom: 0;
+}
+
+.leftContent {
+  text-align: right;
+  padding-right: 20px;
+}
+
+.rightContent {
+  text-align: left;
+  padding-left: 20px;
+  background-color: var(--color-card);
+  border-radius: 8px;
+  border: 1px solid var(--color-accent);
+  padding: 30px;
+}
+
+.timelineMarker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.markerDot {
+  width: 20px;
+  height: 20px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  border: 4px solid var(--color-white);
+  box-shadow: 0 0 20px rgba(120, 119, 198, 0.3);
+}
+
+.markerLine {
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(to bottom, var(--color-accent), rgba(120, 119, 198, 0.3));
+  margin-top: 20px;
+}
+
+.experienceCard {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #393b47;
+  border-radius: 12px;
+  padding: 32px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.experienceCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.experienceCard::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 12px solid rgba(255, 255, 255, 0.05);
+}
+
+.cardHeader {
+  margin-bottom: 24px;
+}
+
+.companyInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  border-left: none;
+  backdrop-filter: none;
+}
+
+.company {
+  color: var(--color-white);
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.position {
+  color: var(--color-accent);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.metadata {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.location, .period {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.keyPoints {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  border-right: none;
+  backdrop-filter: none;
+}
+
+.keyPoints ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.keyPoint {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.keyPoint::before {
+  content: '▸';
+  color: var(--color-accent);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.keyPoint:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeline {
+    padding: 0 16px;
+  }
+  
+  .timelineItem {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .leftContent {
+    text-align: right;
+    padding-right: 0;
+    order: 1;
+  }
+  
+  .timelineMarker {
+    order: 2;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .markerLine {
+    display: none;
+  }
+  
+  .rightContent {
+    text-align: left;
+    padding-left: 0;
+    order: 3;
+  }
+  
+  .companyInfo {
+    border-left: none;
+    border-top: none;
+  }
+  
+  .keyPoints {
+    border-right: none;
+    border-top: none;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #393b47;
+  }
+}
+
+@media (max-width: 480px) {
+  .timelineItem {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  
+  .timelineMarker {
+    flex-direction: row;
+    margin-right: 0;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+  }
+  
+  .markerLine {
+    width: 100px;
+    height: 2px;
+    margin-top: 0;
+    margin-left: 20px;
+    min-height: auto;
+  }
+  
+  .experienceCard::before {
+    display: none;
+  }
+}

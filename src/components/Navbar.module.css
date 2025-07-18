@@ -160,3 +160,73 @@
 .languageOption:last-child {
   border-radius: 0 0 6px 6px;
 }
+
+.navItemWrapper {
+  position: relative;
+}
+
+.hasSubmenu {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.submenuArrow {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+.hasSubmenu:hover .submenuArrow {
+  transform: rotate(180deg);
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--color-bg);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  min-width: 180px;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: submenuFadeIn 0.3s ease forwards;
+}
+
+@keyframes submenuFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.submenuItem {
+  display: block;
+  padding: 12px 20px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.submenuItem:last-child {
+  border-bottom: none;
+}
+
+.submenuItem:hover,
+.submenuItem.active {
+  background: var(--color-accent);
+  color: var(--color-white);
+  padding-left: 25px;
+}
+
+.submenuItem:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+.submenuItem:last-child {
+  border-radius: 0 0 8px 8px;
+}

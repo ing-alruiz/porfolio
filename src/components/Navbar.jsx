@@ -10,14 +10,18 @@ function Navbar() {
   const { t, i18n } = useTranslation();
   const [active, setActive] = React.useState("#home");
   const [languageDropdownOpen, setLanguageDropdownOpen] = React.useState(false);
+  const [homeSubmenuOpen, setHomeSubmenuOpen] = React.useState(false);
   const scrollToSection = useScrollTo();
 
+
   const navItems = [
-    { label: t("nav.home"), href: "#home" },
-    { label: t("nav.about"), href: "#about" },
-    { label: t("nav.experience"), href: "#experience" },
+    { label: t("nav.home"), href: "", hasSubmenu: [
+      { label: t("nav.companies"), href: "#companies" },
+      { label: t("nav.about"), href: "#about" },
+      { label: t("nav.experience"), href: "#experience" },
+      { label: t("nav.portfolio"), href: "#portfolio" },
+    ] },
     { label: t("nav.skills"), href: "#skills" },
-    { label: t("nav.portfolio"), href: "#portfolio" },
     { label: t("nav.contact"), href: "#contact" },
     { label: t("nav.tips"), href: "#tips" },
     { label: t("nav.downloadCV"), href: "/cv.pdf", download: true },
@@ -34,7 +38,9 @@ function Navbar() {
   React.useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'about', 'service', 'experience', 'skills', 'portfolio', 'facts', 'testimonials', 'posts', 'contact'];
-      const scrollPosition = window.scrollY + 100;
+      const navbar = document.querySelector(`.${styles.navbar}`);
+      const navbarHeight = navbar ? navbar.offsetHeight : 80; // fallback to 80px if navbar not found
+      const scrollPosition = window.scrollY + navbarHeight + 50; // Add extra 50px buffer
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const element = document.getElementById(sections[i]);
@@ -58,10 +64,23 @@ function Navbar() {
       window.open(item.href, '_blank');
       return;
     }
+
+    if (item.hasSubmenu) {
+      setHomeSubmenuOpen(!homeSubmenuOpen);
+      return;
+    }
     
     // Handle section navigation
     scrollToSection(item.href);
     setActive(item.href);
+    setHomeSubmenuOpen(false);
+  };
+
+  const handleSubmenuClick = (e, item) => {
+    e.preventDefault();
+    scrollToSection(item.href);
+    setActive(item.href);
+    setHomeSubmenuOpen(false);
   };
 
   const changeLanguage = (langCode) => {
@@ -81,18 +100,37 @@ function Navbar() {
         </div>
         <div className={styles.navLinks}>
           {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className={
-                styles.navLink +
-                (active === item.href ? " " + styles.active : "") +
-                (item.label === t("nav.downloadCV") ? " " + styles.downloadCv : "")
-              }
-              onClick={(e) => handleNavClick(e, item)}
-            >
-              {item.label}
-            </a>
+            <div key={item.label} className={styles.navItemWrapper}>
+              <a
+                href={item.href}
+                className={
+                  styles.navLink +
+                  (active === item.href ? " " + styles.active : "") +
+                  (item.label === t("nav.downloadCV") ? " " + styles.downloadCv : "") +
+                  (item.hasSubmenu ? " " + styles.hasSubmenu : "")
+                }
+                onClick={(e) => handleNavClick(e, item)}
+              >
+                {item.label}
+                {item.hasSubmenu && <span className={styles.submenuArrow}>▼</span>}
+              </a>
+              {item.hasSubmenu && homeSubmenuOpen && (
+                <div className={styles.submenu}>
+                  {item.hasSubmenu.map((subItem) => (
+                    <a
+                      key={subItem.label}
+                      href={subItem.href}
+                      className={`${styles.submenuItem} ${
+                        active === subItem.href ? styles.active : ""
+                      }`}
+                      onClick={(e) => handleSubmenuClick(e, subItem)}
+                    >
+                      {subItem.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
           <div className={styles.languageSelector}>
             <button

@@ -23,9 +23,9 @@ export default function Companies() {
   const { t, i18n } = useTranslation();
 
   return (
-    <section className={styles.section}>
+    <section id="companies" className={styles.section}>
       <div className="container">
-        <div className={styles.label}>{t("companies.label")}</div>
+        <div className="sectionTitle">{t("companies.label")}</div>
         <h2 className={styles.heading}>{t("companies.heading")}</h2>
         <div className={styles.grid}>
           {companies.map((company, idx) => (

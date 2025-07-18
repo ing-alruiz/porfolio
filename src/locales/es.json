@@ -13,6 +13,7 @@
     "posts": "Publicaciones",
     "contact": "Contacto",
     "tips": "Consejos de Desarrollo",
+    "companies": "Empresas",
     "downloadCV": "Descargar CV"
   },
   "hero": {
@@ -26,7 +27,7 @@
     "heading": "Trabaje con Marcas de Confianza."
   },
   "about": {
-    "title": "ACERCA DE MÍ",
+    "title": "Acerca de Mí",
     "heading": "Desarrollo Sistemas que Funcionan",
     "description1": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laboru doloremque laudantium, totaeaque ipsa quae ab illo inven tore veritatis et quasi architecto beatae vitae.",
     "description2": "Oremque laudantium, totaeaque ipsa quae",
@@ -40,6 +41,9 @@
   },
   "portfolio": {
     "title": "Mi Trabajo"
+  },
+  "experience": {
+    "title": "Mi Experiencia"
   },
   "footer": {
     "copyright": "Todos los derechos reservados."

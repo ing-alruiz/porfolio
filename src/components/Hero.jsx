@@ -55,11 +55,11 @@ export default function Hero() {
   React.useEffect(() => {
     const handleMouseMove = (e) => {
       const rect = e.currentTarget.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
+      const centerX = rect.left + rect.width / 3;
+      const centerY = rect.top + rect.height / 3;
       
-      const moveX = (e.clientX - centerX) * 0.02;
-      const moveY = (e.clientY - centerY) * 0.02;
+      const moveX = (e.clientX - centerX) * 500;
+      const moveY = (e.clientY - centerY) * 500;
       
       setMousePos({ x: moveX, y: moveY });
     };
