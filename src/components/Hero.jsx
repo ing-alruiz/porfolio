@@ -43,13 +43,6 @@ export default function Hero() {
   const startOfCareer = personalInfo.startofCareer || GLOBALS.startofCareer || 2020;
   const yearsOfExperience = new Date().getFullYear() - startOfCareer;
   
-  // Debug log to check if roles are loaded
-  React.useEffect(() => {
-    console.log('Current language:', i18n.language);
-    console.log('Available roles:', GLOBALS.roles);
-    console.log('Selected roles:', roles);
-  }, [i18n.language, roles]);
-  
   const [mousePos, setMousePos] = React.useState({ x: 0, y: 0 });
   
   React.useEffect(() => {
@@ -58,13 +51,13 @@ export default function Hero() {
       const centerX = rect.left + rect.width / 3;
       const centerY = rect.top + rect.height / 3;
       
-      const moveX = (e.clientX - centerX) * 500;
-      const moveY = (e.clientY - centerY) * 500;
+      const moveX = (e.clientX - centerX) * 0.05;
+      const moveY = (e.clientY - centerY) * 0.05;
       
       setMousePos({ x: moveX, y: moveY });
     };
     
-    const heroSection = document.getElementById('home');
+    const heroSection = document.getElementById('hero');
     if (heroSection) {
       heroSection.addEventListener('mousemove', handleMouseMove);
       return () => heroSection.removeEventListener('mousemove', handleMouseMove);
@@ -72,7 +65,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className={styles.heroSection}>
+    <section id="hero" className={styles.heroSection}>
       {/* Decorative shapes */}
       <svg 
         className={styles.shapeTopLeft} 

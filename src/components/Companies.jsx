@@ -42,7 +42,7 @@ export default function Companies() {
                 alt={company.name}
                 className={styles.logo}
               />
-              {/* <div className={styles.name}>{company.name}</div> */}
+              <div className={styles.name}>{company.name}</div>
               <div className={styles.position}>
                 {company.position[i18n.language] || company.position.en}
               </div>

@@ -1,6 +1,6 @@
 .heroSection {
   min-height: 600px;
-  height: 90vh;
+  height: 88vh;
   display: flex;
   align-items: center;
   position: relative;
@@ -126,7 +126,7 @@
 
 .sayHelloBtn {
   background: var(--color-accent);
-  color: var(--color-white);
+  color: var(--color-white) !important;
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 700;
   font-size: 1.2rem;
@@ -265,33 +265,182 @@
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 1300px) {
   .heroContent {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 32px;
+    height: fit-content;
   }
+  
+  .left {
+    align-items: center;
+    width: 100%;
+  }
+  
   .right {
     align-items: center;
     margin-top: 32px;
+    width: 100%;
   }
+  
+  .hello {
+    text-align: center;
+  }
+  
+  .name {
+    font-size: 3rem;
+    text-align: center;
+  }
+  
+  .roleLine {
+    text-align: center;
+  }
+  
+  .experienceLegend {
+    text-align: center;
+  }
+  
+  .sayHelloBtn {
+    align-self: center;
+  }
+  
   .avatarWrapper {
     width: 220px;
     height: 270px;
   }
+  
   .avatar {
     width: 220px;
     height: 270px;
   }
+  
   .circleBg {
     width: 270px;
     height: 270px;
     right: -20px;
   }
+  
   .socials {
     right: -60px;
     top: 20px;
   }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .heroContent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    padding: 0 20px;
+    height: fit-content;
+  }
+  
+  .left {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .right {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .hello {
+    text-align: center;
+  }
+  
   .name {
-    font-size: 3rem;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  
+  .roleLine {
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .experienceLegend {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .sayHelloBtn {
+    align-self: center;
+  }
+  
+  .avatarWrapper {
+    margin-bottom: 20px;
+    height: auto;
+    position: relative;
+  }
+  
+  .avatar {
+    width: 100vw;
+  }
+  
+  .circleBg {
+    display: none;
+  }
+  
+  .socials {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 16px;
+  }
+  
+  .socialIcon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0;
+  }
+  
+  /* Hide decorative shapes on mobile for cleaner look */
+  .shapeTopLeft,
+  .shapeTopRight,
+  .shapeBottomLeft,
+  .shapeBottomRight {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 2rem;
+  }
+  
+  .roleLine {
+    font-size: 1rem;
+  }
+  
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .circleBg {
+    width: 170px;
+    height: 170px;
+  }
+  
+  .heroContent {
+    padding: 0 15px;
+  }
+  
+  .socialIcon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
   }
 }
