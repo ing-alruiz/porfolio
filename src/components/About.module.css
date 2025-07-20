@@ -3,57 +3,12 @@
   display: flex;
   align-items: center;
   position: relative;
-  background: none;
+  background: url('cartographer.png');
+  background-attachment: fixed;
   padding: 80px 0;
   overflow: hidden;
 }
 
-.aboutSection::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.2) 0%, transparent 50%);
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.4;
-}
-
-.aboutSection::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    repeating-conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(255, 255, 255, 0.03) 1deg, transparent 2deg),
-    repeating-linear-gradient(0deg, transparent, rgba(255, 255, 255, 0.03) 1px, transparent 2px),
-    repeating-linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03) 1px, transparent 2px);
-  background-size: 20px 20px, 3px 3px, 3px 3px;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.6;
-  animation: grain 8s steps(10) infinite;
-}
-
-@keyframes grain {
-  0%, 100% { transform: translate(0, 0); }
-  10% { transform: translate(-1px, -1px); }
-  20% { transform: translate(1px, -1px); }
-  30% { transform: translate(-1px, 1px); }
-  40% { transform: translate(1px, 1px); }
-  50% { transform: translate(-1px, 0); }
-  60% { transform: translate(1px, 0); }
-  70% { transform: translate(0, -1px); }
-  80% { transform: translate(0, 1px); }
-  90% { transform: translate(-1px, -1px); }
-}
 
 .container {
   width: 100%;
@@ -157,16 +112,12 @@
 }
 
 .mainTitle {
-  font-size: 3.5rem;
+  font-size: 2.2rem;
   font-weight: 900;
   color: var(--color-white);
   font-family: 'Montserrat', Arial, sans-serif;
   line-height: 1.2;
   margin: 0;
-}
-
-.description {
-  margin-bottom: 50px;
 }
 
 .description p {
@@ -178,35 +129,40 @@
 }
 
 .personalInfo {
-  margin-bottom: 50px;
+  margin-bottom: 1vh;
+  padding: 2vh 0;
+  border-bottom: 1px solid var(--color-accent);
+  border-top: 1px solid var(--color-accent);
 }
 
 .infoGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px 60px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 40px;
 }
 
 .infoItem {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  gap: 15px;
+  align-items: center;
 }
 
 .label {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: 'Montserrat', Arial, sans-serif;
+  color: var(--color-text);
+  font-family: 'Roboto Flex', Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: left;
+  opacity: 0.9;
 }
 
 .value {
   color: var(--color-white);
-  font-size: 1.1rem;
+  font-family: 'Roboto Flex', Arial, sans-serif;
+  font-size: 0.95rem;
   font-weight: 600;
-  font-family: 'Montserrat', Arial, sans-serif;
+  text-align: right;
 }
 
 .signature {
@@ -280,7 +236,7 @@
   }
   
   .mainTitle {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     text-align: center;
   }
   
@@ -306,15 +262,33 @@
   }
   
   .mainTitle {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   
   .infoGrid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 15px;
   }
   
   .aboutContent {
     padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .infoItem {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    text-align: center;
+  }
+  
+  .label {
+    text-align: center;
+    margin-bottom: 2px;
+  }
+  
+  .value {
+    text-align: center;
+    font-weight: 700;
   }
 }

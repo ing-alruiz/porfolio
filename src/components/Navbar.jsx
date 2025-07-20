@@ -21,6 +21,7 @@ function Navbar() {
   const navItems = [
     { label: t("nav.home"), href: "#hero", hasSubmenu: [
       { label: t("nav.hero"), href: "#hero" },
+      { label: t("nav.aptitudes"), href: "#aptitudes" },
       { label: t("nav.companies"), href: "#companies" },
       { label: t("nav.about"), href: "#about" },
       { label: t("nav.experience"), href: "#experience" },
@@ -59,7 +60,10 @@ function Navbar() {
         return;
       }
       
-      const sections = ['hero', 'companies', 'about', 'experience', 'portfolio'];
+      // Generate sections dynamically from navItems submenu
+      const homeItem = navItems.find(item => item.hasSubmenu);
+      const sections = homeItem?.hasSubmenu.map(subItem => subItem.href.replace('#', '')) || [];
+      
       const navbar = document.querySelector(`.${styles.navbar}`);
       const navbarHeight = navbar ? navbar.offsetHeight : 80;
       const scrollPosition = window.scrollY + navbarHeight + 100; // Increased buffer
@@ -86,7 +90,7 @@ function Navbar() {
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Call once to set initial state
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [location.pathname, active]);
+  }, [location.pathname, active, navItems]);
 
   // Reset active state when leaving home page
   React.useEffect(() => {

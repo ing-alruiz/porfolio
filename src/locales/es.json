@@ -3,50 +3,112 @@
   "language": "Idioma",
   "nav": {
     "home": "Inicio",
-    "about": "Acerca de",
-    "service": "Servicios",
-    "experience": "Experiencia",
-    "skills": "Habilidades",
-    "portfolio": "Portafolio",
-    "facts": "Datos",
-    "testimonials": "Testimonios",
-    "posts": "Publicaciones",
-    "contact": "Contacto",
-    "tips": "Consejos de Desarrollo",
+    "hero": "Héroe",
+    "aptitudes": "Aptitudes",
     "companies": "Empresas",
-    "hero": "Hola",
-    "downloadCV": "Descargar CV"
+    "about": "Acerca de",
+    "experience": "Experiencia",
+    "portfolio": "Portafolio",
+    "skills": "Habilidades",
+    "contact": "Contacto",
+    "tips": "Consejos",
+    "downloadCV": "CV"
   },
   "hero": {
-    "hello": "HOLA SOY",
-    "passionate": "Un Apasionado",
-    "yearsExperience": " años de experiencia",
-    "downloadCV": "Descargar CV"
-  },
-  "companies": {
-    "label": "Clientes Favoritos",
-    "heading": "Trabaje con Marcas de Confianza."
+    "hello": "Hola, soy",
+    "rolePrefix": "Soy un",
+    "experienceLegend": "3+ años de experiencia en desarrollo web",
+    "sayHello": "Saluda",
+    "passionate": "Un apasionado en",
+    "yearsExperience": "años de experiencia",
+    "downloadCV": "Obtener CV"
   },
   "about": {
     "title": "Acerca de Mí",
-    "heading": "Desarrollo Sistemas que Funcionan",
-    "description1": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laboru doloremque laudantium, totaeaque ipsa quae ab illo inven tore veritatis et quasi architecto beatae vitae.",
-    "description2": "Oremque laudantium, totaeaque ipsa quae",
+    "heading": "Soy un desarrollador web apasionado con experiencia en tecnologías modernas",
+    "description1": "Soy un desarrollador web apasionado con experiencia en tecnologías y frameworks modernos. Me encanta crear soluciones intuitivas y eficientes que resuelven problemas del mundo real.",
+    "description2": "Con una sólida base en desarrollo frontend y backend, disfruto trabajando en proyectos desafiantes que amplían los límites de lo que es posible en la web.",
+    "downloadCV": "Descargar CV",
     "name": "Nombre",
     "phone": "Teléfono",
     "age": "Edad",
-    "email": "Email",
+    "years": "Años",
+    "email": "Correo",
     "occupation": "Ocupación",
-    "nationality": "Nacionalidad",
-    "downloadCV": "DESCARGAR MI CV"
+    "nationality": "Nacionalidad"
   },
-  "portfolio": {
-    "title": "Mi Trabajo"
+  "aptitudes": {
+    "title": "Aptitudes",
+    "adaptability": {
+      "title": "Adaptabilidad",
+      "description": "Me adapto rápidamente a nuevas tecnologías y entornos cambiantes, abrazando los desafíos como oportunidades de crecimiento y aprendizaje."
+    },
+    "investigative": {
+      "title": "Investigación y Análisis",
+      "description": "Investigo a fondo los problemas y analizo las soluciones, asegurando decisiones bien informadas y resultados óptimos en cada proyecto."
+    },
+    "innovation": {
+      "title": "Innovación",
+      "description": "Aporto pensamiento creativo y enfoques innovadores para resolver problemas complejos y crear experiencias de usuario únicas."
+    },
+    "attention": {
+      "title": "Atención al Detalle",
+      "description": "Mantengo altos estándares de calidad y precisión en mi trabajo, asegurando que cada detalle cumpla con la excelencia profesional."
+    },
+    "initiative": {
+      "title": "Iniciativa",
+      "description": "Identifico proactivamente oportunidades de mejora y tomo acciones decisivas para impulsar los proyectos hacia adelante."
+    },
+    "teamwork": {
+      "title": "Trabajo en Equipo",
+      "description": "Colaboro efectivamente con equipos diversos, fomentando la comunicación y contribuyendo al éxito colectivo."
+    }
   },
   "experience": {
-    "title": "Mi Experiencia"
+    "title": "Experiencia",
+    "years": "años"
+  },
+  "portfolio": {
+    "title": "Portafolio",
+    "viewProject": "Ver Proyecto",
+    "liveDemo": "Demo en Vivo",
+    "sourceCode": "Código Fuente"
+  },
+  "skills": {
+    "title": "Habilidades",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Herramientas",
+    "databases": "Bases de Datos"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Ponte en contacto",
+    "name": "Nombre",
+    "email": "Correo Electrónico",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje",
+    "success": "¡Mensaje enviado exitosamente!",
+    "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo."
+  },
+  "tips": {
+    "title": "Consejos y Tutoriales",
+    "readMore": "Leer Más",
+    "categories": {
+      "javascript": "JavaScript",
+      "react": "React",
+      "nodejs": "Node.js",
+      "css": "CSS",
+      "general": "General"
+    }
+  },
+  "companies": {
+    "label": "Empresas con las que he trabajado",
+    "heading": "Confiado por organizaciones líderes"
   },
   "footer": {
-    "copyright": "Todos los derechos reservados."
+    "rights": "Todos los derechos reservados",
+    "madeWith": "Hecho con",
+    "by": "por"
   }
 }

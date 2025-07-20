@@ -5,6 +5,43 @@ import personalInfo from "../data/personal-info.json";
 
 export default function About() {
   const { t, i18n } = useTranslation();
+  
+  // Calculate age from date of birth
+  const calculateAge = (dateOfBirth) => {
+    if (!dateOfBirth) return 29; // Default age
+    
+    // Handle different date formats
+    let birthDate;
+    if (typeof dateOfBirth === 'string') {
+      // Try parsing the date string
+      birthDate = new Date(dateOfBirth);
+    } else if (typeof dateOfBirth === 'number') {
+      // If it's already a number, use it as birth year
+      const currentYear = new Date().getFullYear();
+      return currentYear - dateOfBirth;
+    } else {
+      return 29; // Default age
+    }
+    
+    // Check if the date is valid
+    if (isNaN(birthDate.getTime())) {
+      return 29; // Default age if invalid date
+    }
+    
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    
+    // Adjust age if birthday hasn't occurred this year
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    
+    // Ensure age is a valid number
+    return isNaN(age) ? 29 : age;
+  };
+
+  const age = calculateAge(personalInfo.dateOfBirth);
 
   return (
     <section id="about" className={styles.aboutSection}>
@@ -95,7 +132,7 @@ export default function About() {
                 </div>
                 <div className={styles.infoItem}>
                   <span className={styles.label}>{t("about.age")}</span>
-                  <span className={styles.value}>29 Years</span>
+                  <span className={styles.value}>{age} {t("about.years")}</span>
                 </div>
                 <div className={styles.infoItem}>
                   <span className={styles.label}>{t("about.email")}</span>
@@ -111,13 +148,13 @@ export default function About() {
                 </div>
               </div>
             </div>
-
+{/* 
             <div className={styles.signature}>
               <div className={styles.signatureText}>{personalInfo.name} {personalInfo.lastName}</div>
               <div className={styles.signatureTitle}>
                 <strong>{personalInfo.name.toUpperCase()} {personalInfo.lastName.toUpperCase()}</strong> {personalInfo.currentOccupation[i18n.language] || personalInfo.currentOccupation.en}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

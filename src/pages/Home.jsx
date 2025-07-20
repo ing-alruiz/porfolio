@@ -4,11 +4,13 @@ import Companies from "../components/Companies";
 import About from "../components/About";
 import Portfolio from "../components/Portfolio";
 import Experience from "../components/Experience";
+import Aptitudes from "../components/Aptitudes";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <Aptitudes />
       <Companies />
       <About />
       <Experience />

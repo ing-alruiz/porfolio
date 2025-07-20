@@ -1,6 +1,10 @@
 .portfolioSection {
-  padding: 0;
-  background: transparent;
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+  background: 
+    url('black-felt.png');
+  background-attachment: fixed;
 }
 
 .portfolioTitle {
@@ -31,6 +35,8 @@
   gap: 32px;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 3;
 }
 
 .portfolioCard {

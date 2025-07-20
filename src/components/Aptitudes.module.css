@@ -1,0 +1,369 @@
+.aptitudesSection {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: var(--color-bg);
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+.aptitudesSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('diagmonds-light.png');
+  opacity: 0.09;
+  pointer-events: none;
+  background-attachment: fixed;
+  z-index: 1;
+}
+
+.aptitudesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.carouselContainer {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 40px 0;
+  margin: 40px 0;
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+
+.carouselTrack {
+  display: flex;
+  gap: 30px;
+  animation: scroll 40s linear infinite;
+  width: max-content;
+  padding: 0 20px;
+}
+
+.aptitudeCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 40px 30px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  width: 300px;
+}
+
+/* Alternating card positions */
+.aptitudeCard:nth-child(even) {
+  transform: translateY(-20px);
+}
+
+.aptitudeCard:nth-child(odd) {
+  transform: translateY(20px);
+}
+
+/* Maintain staggered effect on hover */
+.aptitudeCard:nth-child(even):hover {
+  transform: translateY(-25px);
+}
+
+.aptitudeCard:nth-child(odd):hover {
+  transform: translateY(15px);
+}
+
+.aptitudeCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.aptitudeCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(var(--color-accent-rgb), 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.aptitudeCard:hover::before {
+  opacity: 1;
+}
+
+.iconWrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-accent), color-mix(in srgb, var(--color-accent) 80%, transparent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.aptitudeCard:hover .iconWrapper {
+  transform: scale(1.1);
+}
+
+.icon {
+  font-size: 2rem;
+  color: var(--color-white);
+}
+
+.cardContent {
+  position: relative;
+  z-index: 2;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-white);
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.cardDescription {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 400;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.carouselContainer:hover .carouselTrack {
+  animation-play-state: paused;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .aptitudesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .aptitudeCard {
+    padding: 30px 25px;
+  }
+  
+  .carouselTrack {
+    gap: 25px;
+    animation-duration: 35s;
+  }
+  
+  .aptitudeCard {
+    width: 280px;
+    padding: 25px 20px;
+  }
+  
+  /* Reduce staggered effect on tablet */
+  .aptitudeCard:nth-child(even) {
+    transform: translateY(-15px);
+  }
+  
+  .aptitudeCard:nth-child(odd) {
+    transform: translateY(15px);
+  }
+  
+  .aptitudeCard:nth-child(even):hover {
+    transform: translateY(-20px);
+  }
+  
+  .aptitudeCard:nth-child(odd):hover {
+    transform: translateY(10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .aptitudesGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 40px;
+  }
+  
+  .aptitudeCard {
+    padding: 30px 20px;
+  }
+  
+  .iconWrapper {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .icon {
+    font-size: 1.8rem;
+  }
+  
+  .cardTitle {
+    font-size: 1.3rem;
+  }
+  
+  .cardDescription {
+    font-size: 0.95rem;
+  }
+  
+  .carouselTrack {
+    gap: 20px;
+    animation-duration: 30s;
+    padding: 0 15px;
+  }
+  
+  .aptitudeCard {
+    width: 260px;
+    padding: 20px 18px;
+  }
+  
+  /* Further reduce staggered effect on mobile */
+  .aptitudeCard:nth-child(even) {
+    transform: translateY(-10px);
+  }
+  
+  .aptitudeCard:nth-child(odd) {
+    transform: translateY(10px);
+  }
+  
+  .aptitudeCard:nth-child(even):hover {
+    transform: translateY(-15px);
+  }
+  
+  .aptitudeCard:nth-child(odd):hover {
+    transform: translateY(5px);
+  }
+}
+
+@media (max-width: 480px) {
+  .aptitudesSection {
+    padding: 60px 0;
+  }
+  
+  .aptitudeCard {
+    padding: 25px 15px;
+  }
+  
+  .iconWrapper {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .icon {
+    font-size: 1.5rem;
+  }
+  
+  .cardTitle {
+    font-size: 1.2rem;
+  }
+  
+  .cardDescription {
+    font-size: 0.9rem;
+  }
+  
+  .carouselContainer {
+    padding: 30px 0;
+    margin: 30px 0;
+  }
+  
+  .carouselTrack {
+    gap: 15px;
+    animation-duration: 25s;
+    padding: 0 10px;
+  }
+  
+  .aptitudeCard {
+    width: 240px;
+    padding: 18px 15px;
+  }
+  
+  /* Minimal staggered effect on small mobile */
+  .aptitudeCard:nth-child(even) {
+    transform: translateY(-8px);
+  }
+  
+  .aptitudeCard:nth-child(odd) {
+    transform: translateY(8px);
+  }
+  
+  .aptitudeCard:nth-child(even):hover {
+    transform: translateY(-12px);
+  }
+  
+  .aptitudeCard:nth-child(odd):hover {
+    transform: translateY(4px);
+  }
+}
+
+@media (max-width: 360px) {
+  .carouselTrack {
+    gap: 12px;
+    animation-duration: 20s;
+  }
+  
+  .aptitudeCard {
+    width: 220px;
+    padding: 15px 12px;
+  }
+  
+  .iconWrapper {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .icon {
+    font-size: 1.1rem;
+  }
+  
+  .cardTitle {
+    font-size: 0.95rem;
+  }
+  
+  .cardDescription {
+    font-size: 0.75rem;
+  }
+  
+  /* Very minimal staggered effect on very small mobile */
+  .aptitudeCard:nth-child(even) {
+    transform: translateY(-5px);
+  }
+  
+  .aptitudeCard:nth-child(odd) {
+    transform: translateY(5px);
+  }
+  
+  .aptitudeCard:nth-child(even):hover {
+    transform: translateY(-8px);
+  }
+  
+  .aptitudeCard:nth-child(odd):hover {
+    transform: translateY(2px);
+  }
+}
