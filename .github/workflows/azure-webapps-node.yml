@@ -21,18 +21,33 @@ jobs:
           node-version: '20.x'
           cache: 'npm'
 
-      - name: Install and build
-        run: |
-          npm ci
-          npm install terser --save-dev
-          npm run build
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Prepare deployment package
+      - name: Build application
+        run: npm run build
+
+      - name: Install serve globally for production
+        run: npm install -g serve
+
+      - name: Create production package.json
         run: |
-          npm install serve --save
-          npm pkg set scripts.start="npx serve -s dist -l $PORT"
-          npm prune --production
-          rm -rf .git .github .gitignore README.md *.md tests coverage
+          cat > package.json << EOF
+          {
+            "name": "porfolio-production",
+            "version": "1.0.0",
+            "type": "module",
+            "scripts": {
+              "start": "npx serve -s dist -l 0.0.0.0:\$PORT"
+            },
+            "dependencies": {
+              "serve": "^14.2.4"
+            }
+          }
+          EOF
+
+      - name: Install production dependencies
+        run: npm install --production
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -41,7 +56,7 @@ jobs:
           path: |
             dist
             package.json
-            package-lock.json
+            node_modules
 
   deploy:
     runs-on: ubuntu-latest
