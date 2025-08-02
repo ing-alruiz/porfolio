@@ -47,9 +47,11 @@ jobs:
           cd dist
           npm install --only=production
           
-          # Verify installation
+          # Verify serve installation
           echo "Verifying serve installation:"
           npx serve --version
+          echo "Package.json content:"
+          cat package.json
       
       - name: Upload artifact
         uses: actions/upload-artifact@v4
