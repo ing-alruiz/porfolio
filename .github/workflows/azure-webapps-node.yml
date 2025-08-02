@@ -32,13 +32,13 @@ jobs:
 
       - name: Prepare production deployment
         run: |
-          # Create deployment directory structure
+          # Create deployment directory
           mkdir -p deployment
           
-          # Copy built application files
+          # Copy built files
           cp -r dist/* deployment/
           
-          # Create a production package.json with serve as dependency
+          # Create optimized package.json for production
           cat > deployment/package.json << 'EOF'
           {
             "name": "porfolio-production",
@@ -61,10 +61,10 @@ jobs:
           cd deployment
           npm install --only=production --no-optional
           
-          # Verify serve is installed
-          ls -la node_modules/.bin/
+          # Verify serve installation
           echo "Checking serve installation:"
-          npx serve --version || echo "Serve not found via npx"
+          ls -la node_modules/.bin/ | grep serve || echo "serve binary not found"
+          ./node_modules/.bin/serve --version || echo "serve version check failed"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
