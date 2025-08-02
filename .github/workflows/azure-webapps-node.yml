@@ -47,29 +47,24 @@ jobs:
               "npm": "10.x"
             },
             "scripts": {
-              "start": "node_modules/.bin/serve -s . -p $PORT"
-            },
-            "dependencies": {
-              "serve": "^14.2.4"
+              "start": "npx serve@14.2.4 -s . -p $PORT"
             }
           }
           EOF
       
-      - name: Install production dependencies in dist
+      - name: Verify build output
         run: |
           cd dist
-          npm install --production
-          
-          # Verify serve installation
-          echo "Verifying serve installation:"
-          ls -la node_modules/.bin/serve
-          ./node_modules/.bin/serve --version
+          echo "Build output verification:"
+          ls -la
+          echo "Package.json content:"
+          cat package.json
       
-      - name: Upload artifact (contents of dist only)
+      - name: Upload artifact (contents of dist folder only)
         uses: actions/upload-artifact@v4
         with:
           name: webapp
-          path: dist/*
+          path: dist/
 
   deploy:
     runs-on: ubuntu-latest
@@ -83,6 +78,14 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: webapp
+          path: .
+      
+      - name: Verify deployment package
+        run: |
+          echo "Deployment package contents:"
+          ls -la
+          echo "Package.json:"
+          cat package.json
       
       - name: Login to Azure
         uses: azure/login@v2
