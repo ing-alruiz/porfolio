@@ -1,7 +1,4 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy Node.js app to Azure Web App - albertoruiz
+name: Deploy React (Vite) App to Azure Web App
 
 on:
   push:
@@ -13,91 +10,59 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: read #This is required for actions/checkout
+      contents: read
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Node.js version
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
           cache: 'npm'
 
-      - name: npm install, build, and test
+      - name: Install and build
         run: |
           npm ci
-          # Install terser for Vite build minification
-          npm install --save-dev terser
-          npm run build --if-present
-          npm run test --if-present
+          npm run build
 
       - name: Prepare deployment package
         run: |
-          # Verify package.json has start script
-          if ! grep -q '"start"' package.json; then
-            echo "Warning: No start script found in package.json"
-            echo "Adding default start script"
-            npm pkg set scripts.start="node server.js"
-          fi
-          # Check if build was successful, if not create fallback
-          if [ ! -d "dist" ] && [ ! -d "build" ]; then
-            echo "Warning: No build output found, creating fallback structure"
-            mkdir -p public
-            if [ -f "index.html" ]; then
-              cp index.html public/
-            else
-              echo '<!DOCTYPE html><html><head><title>Portfolio</title></head><body><h1>Portfolio App</h1></body></html>' > public/index.html
-            fi
-          fi
-          # Verify build directory exists if needed
-          if [ ! -d "build" ] && [ ! -f "server.js" ] && [ ! -f "index.js" ] && [ ! -f "app.js" ]; then
-            echo "Warning: No main entry point found, creating basic server.js"
-            echo 'const express = require("express"); const app = express(); const port = process.env.PORT || 3000; app.use(express.static("public")); app.use(express.static("dist")); app.get("*", (req, res) => res.sendFile(__dirname + "/public/index.html")); app.listen(port, () => console.log(`Server running on port ${port}`));' > server.js
-          fi
-          # Remove dev dependencies and unnecessary files
+          npm install serve --save
+          npm pkg set scripts.start="npx serve -s dist -l $PORT"
           npm prune --production
-          # Remove files not needed for deployment
-          rm -rf .git .github .gitignore README.md *.md
-          rm -rf tests test coverage .nyc_output
-          rm -rf .env.example .env.local
+          rm -rf .git .github .gitignore README.md *.md tests coverage
 
-      - name: Upload artifact for deployment job
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: node-app
           path: |
-            .
-            !node_modules/.cache
-            !.git
-            !.github
-            !tests
-            !test
-            !coverage
-            !.nyc_output
+            dist
+            package.json
+            package-lock.json
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
     permissions:
-      id-token: write #This is required for requesting the JWT
-      contents: read #This is required for actions/checkout
+      id-token: write
+      contents: read
 
     steps:
-      - name: Download artifact from build job
+      - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: node-app
-      
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_646B290AC1724693B164CD3D4947B353 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_BD250A8452F0421B94ECF3BD50BFDC47 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A0A3E69559D143F8A11E4E6CD7432251 }}
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: 'Deploy to Azure Web App'
-        id: deploy-to-webapp
+      - name: Deploy to Azure
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'albertoruiz'
