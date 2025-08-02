@@ -14,9 +14,13 @@ export default defineConfig({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
-          router: ['react-router-dom'],
           mui: ['@mui/material', '@emotion/react', '@emotion/styled'],
-          icons: ['@fortawesome/fontawesome-svg-core', '@fortawesome/free-brands-svg-icons', '@fortawesome/free-regular-svg-icons', '@fortawesome/free-solid-svg-icons', '@fortawesome/react-fontawesome']
+          fontawesome: [
+            '@fortawesome/fontawesome-svg-core',
+            '@fortawesome/free-solid-svg-icons',
+            '@fortawesome/free-brands-svg-icons',
+            '@fortawesome/react-fontawesome'
+          ]
         }
       }
     }
@@ -26,7 +30,7 @@ export default defineConfig({
     host: true
   },
   preview: {
-    port: 8080,
+    port: 3000,
     host: true
   }
 })
