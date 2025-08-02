@@ -47,7 +47,7 @@ jobs:
               "npm": "10.x"
             },
             "scripts": {
-              "start": "serve -s . -p $PORT"
+              "start": "npx serve -s . -p $PORT"
             },
             "dependencies": {
               "serve": "^14.2.4"
@@ -63,6 +63,7 @@ jobs:
           # Verify serve installation
           echo "Verifying serve installation:"
           npx serve --version
+          ls -la node_modules/.bin/serve
       
       - name: Upload artifact
         uses: actions/upload-artifact@v4
