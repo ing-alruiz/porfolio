@@ -1,1 +1,2 @@
-npx serve -s build -l 8080
+npm install
+npx serve -s build -p 8080
