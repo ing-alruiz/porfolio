@@ -47,7 +47,7 @@ jobs:
               "npm": "10.x"
             },
             "scripts": {
-              "start": "npx serve -s . -p $PORT"
+              "start": "serve -s . -p $PORT"
             },
             "dependencies": {
               "serve": "^14.2.4"
@@ -55,15 +55,15 @@ jobs:
           }
           EOF
       
-      - name: Install production dependencies
+      - name: Install production dependencies in dist
         run: |
           cd dist
-          npm install --only=production
+          npm install --production
           
           # Verify serve installation
           echo "Verifying serve installation:"
+          ls -la node_modules/.bin/
           npx serve --version
-          ls -la node_modules/.bin/serve
       
       - name: Upload artifact
         uses: actions/upload-artifact@v4
