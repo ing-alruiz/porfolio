@@ -21,24 +21,26 @@ jobs:
           node-version: '20.x'
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Clean npm cache
+        run: npm cache clean --force
+
+      - name: Delete lock file and reinstall
+        run: |
+          rm -f package-lock.json
+          npm install
 
       - name: Build application
         run: npm run build
 
-      - name: Install serve globally for production
-        run: npm install -g serve
-
       - name: Create production package.json
         run: |
-          cat > package.json << EOF
+          cat > dist/package.json << EOF
           {
             "name": "porfolio-production",
             "version": "1.0.0",
             "type": "module",
             "scripts": {
-              "start": "npx serve -s dist -l 0.0.0.0:\$PORT"
+              "start": "npx serve -s . -l 0.0.0.0:\$PORT"
             },
             "dependencies": {
               "serve": "^14.2.4"
@@ -46,17 +48,16 @@ jobs:
           }
           EOF
 
-      - name: Install production dependencies
-        run: npm install --production
+      - name: Install serve in dist directory
+        run: |
+          cd dist
+          npm install
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: |
-            dist
-            package.json
-            node_modules
+          path: dist
 
   deploy:
     runs-on: ubuntu-latest
