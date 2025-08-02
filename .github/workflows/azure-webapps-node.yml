@@ -47,24 +47,32 @@ jobs:
               "npm": "10.x"
             },
             "scripts": {
-              "start": "npx serve@14.2.4 -s . -p $PORT"
+              "start": "node server.js"
+            },
+            "dependencies": {
+              "express": "^4.18.2",
+              "compression": "^1.7.4"
             }
           }
           EOF
       
-      - name: Verify build output
+      - name: Copy server.js to dist
+        run: cp server.js dist/
+      
+      - name: Install production dependencies
         run: |
           cd dist
-          echo "Build output verification:"
-          ls -la
-          echo "Package.json content:"
-          cat package.json
+          npm install --only=production
+          
+          # Verify express installation
+          echo "Verifying express installation:"
+          ls -la node_modules/express/
       
-      - name: Upload artifact (contents of dist folder only)
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: webapp
-          path: dist/
+          path: dist
 
   deploy:
     runs-on: ubuntu-latest
@@ -78,14 +86,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: webapp
-          path: .
-      
-      - name: Verify deployment package
-        run: |
-          echo "Deployment package contents:"
-          ls -la
-          echo "Package.json:"
-          cat package.json
       
       - name: Login to Azure
         uses: azure/login@v2
