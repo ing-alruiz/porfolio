@@ -24,6 +24,7 @@ jobs:
       - name: Install and build
         run: |
           npm ci
+          npm install terser --save-dev
           npm run build
 
       - name: Prepare deployment package
