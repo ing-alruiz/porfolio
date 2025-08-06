@@ -1,10 +1,9 @@
 {
     "logoLocation": "/albertoLogo.png",
     "socialLinks": [
-        { "icon": ["fab", "facebook-f"], "url": "https://facebook.com" },
-        { "icon": ["fab", "x-twitter"], "url": "https://twitter.com" },
-        { "icon": ["fab", "linkedin"], "url": "https://linkedin.com" },
-        { "icon": ["fab", "youtube"], "url": "https://youtube.com" }
+        { "icon": ["fab", "whatsapp"], "url": "https://wa.me/+50685625736" },
+        { "icon": ["fab", "linkedin"], "url": "https://www.linkedin.com/in/albertoruizperez/" },
+        { "icon": ["far", "envelope"], "url": "mailto:alruizmail@gmail.com" }
     ],
     "companies": [
         {

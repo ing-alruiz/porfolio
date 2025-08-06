@@ -63,7 +63,7 @@
   font-size: 0.75rem;
 }
 
-@media (max-width: var(--breakpoint-tablet)) {
+@media (max-width: 768px) {
   .contactBarContainer {
     justify-content: center;
     gap: 15px;
@@ -88,7 +88,7 @@
   }
 }
 
-@media (max-width: var(--breakpoint-mobile)) {
+@media (max-width: 480px) {
   .contactBarContainer {
     gap: 10px;
   }

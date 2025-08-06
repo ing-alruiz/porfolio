@@ -13,7 +13,7 @@
   padding-top: var(--header-navbar-only);
 }
 
-@media (max-width: var(--breakpoint-tablet)) {
+@media (max-width: 768px) {
   .mainContent.contactBarVisible {
     padding-top: var(--header-total-height-mobile);
   }
@@ -23,7 +23,7 @@
   }
 }
 
-@media (max-width: var(--breakpoint-mobile)) {
+@media (max-width: 480px) {
   .mainContent.contactBarVisible {
     padding-top: var(--header-total-height-small);
   }

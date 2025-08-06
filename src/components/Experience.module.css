@@ -190,7 +190,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: var(--breakpoint-tablet)) {
+@media (max-width: 768px) {
   .timeline {
     padding: 0 16px;
   }
@@ -230,7 +230,7 @@
   
 }
 
-@media (max-width: var(--breakpoint-mobile)) {
+@media (max-width: 480px) {
   .timelineItem {
     flex-direction: column;
     margin-bottom: 40px;

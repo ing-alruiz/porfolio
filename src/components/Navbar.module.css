@@ -297,7 +297,7 @@
 }
 
 /* Tablet responsive */
-@media (max-width: var(--breakpoint-large-tablet)) {
+@media (max-width: 1024px) {
   .navbarContainer {
     grid-template-columns: 2fr 8fr 1fr;
     gap: 30px;
@@ -320,7 +320,7 @@
 }
 
 /* Small tablet responsive */
-@media (max-width: var(--breakpoint-small-tablet)) {
+@media (max-width: 900px) {
   .navbarContainer {
     grid-template-columns: 1fr auto;
     gap: 20px;
@@ -396,7 +396,7 @@
 }
 
 /* Mobile responsive */
-@media (max-width: var(--breakpoint-tablet)) {
+@media (max-width: 768px) {
   .navbarContainer {
     padding: 15px 20px;
     width: 100vw;
@@ -461,7 +461,7 @@
 }
 
 /* Small mobile responsive */
-@media (max-width: var(--breakpoint-mobile)) {
+@media (max-width: 480px) {
   .navbarContainer {
     padding: 12px 15px;
     gap: 15px;
@@ -514,7 +514,7 @@
 }
 
 /* Very small mobile responsive */
-@media (max-width: var(--breakpoint-small-mobile)) {
+@media (max-width: 360px) {
   .navbarContainer {
     padding: 10px 12px;
   }

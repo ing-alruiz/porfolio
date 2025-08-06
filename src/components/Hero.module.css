@@ -265,7 +265,7 @@
 }
 
 /* Responsive */
-@media (max-width: var(--breakpoint-large-desktop)) {
+@media (max-width: 1300px) {
   .heroContent {
     flex-direction: column;
     align-items: center;
@@ -323,13 +323,13 @@
   }
   
   .socials {
-    right: -60px;
+    right: 10px;
     top: 20px;
   }
 }
 
 /* Mobile responsive */
-@media (max-width: var(--breakpoint-tablet)) {
+@media (max-width: 768px) {
 
   .heroSection {
     margin-bottom: 2vh;
@@ -424,7 +424,7 @@
   }
 }
 
-@media (max-width: var(--breakpoint-mobile)) {
+@media (max-width: 480px) {
   .name {
     font-size: 2rem;
   }
@@ -460,7 +460,7 @@
   }
 }
 
-@media (max-width: var(--breakpoint-small-mobile)) {
+@media (max-width: 360px) {
   .avatarWrapper {
     height: 180px;
     width: 130px;

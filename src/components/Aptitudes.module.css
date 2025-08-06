@@ -167,7 +167,7 @@
 }
 
 /* Responsive */
-@media (max-width: var(--breakpoint-large-tablet)) {
+@media (max-width: 1024px) {
   .aptitudesGrid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
@@ -205,7 +205,7 @@
   }
 }
 
-@media (max-width: var(--breakpoint-tablet)) {
+@media (max-width: 768px) {
   .aptitudesGrid {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -262,7 +262,7 @@
   }
 }
 
-@media (max-width: var(--breakpoint-mobile)) {
+@media (max-width: 480px) {
   .aptitudesSection {
     padding: 60px 0;
   }
@@ -322,7 +322,7 @@
   }
 }
 
-@media (max-width: var(--breakpoint-small-mobile)) {
+@media (max-width: 360px) {
   .carouselTrack {
     gap: 12px;
     animation-duration: 20s;

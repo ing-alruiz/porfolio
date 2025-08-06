@@ -194,7 +194,7 @@
 
 
 /* Responsive */
-@media (max-width: var(--breakpoint-large-tablet)) {
+@media (max-width: 1024px) {
   .container {
     padding: 0 24px;
   }
@@ -223,7 +223,7 @@
   }
 }
 
-@media (max-width: var(--breakpoint-tablet)) {
+@media (max-width: 768px) {
   .container {
     padding: 0 16px;
   }
@@ -266,7 +266,7 @@
   }
 }
 
-@media (max-width: var(--breakpoint-mobile)) {
+@media (max-width: 480px) {
   .profileImage {
     width: 220px;
     height: 280px;
@@ -312,7 +312,7 @@
   }
 }
 
-@media (max-width: var(--breakpoint-small-mobile)) {
+@media (max-width: 360px) {
   .profileImage {
     width: 180px;
     height: 240px;

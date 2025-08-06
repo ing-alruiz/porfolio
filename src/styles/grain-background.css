@@ -47,7 +47,7 @@
 }
 
 /* Media queries for performance on mobile */
-@media (max-width: var(--breakpoint-tablet)) {
+@media (max-width: 768px) {
   .grain-background::before {
     background-size: 
       6px 6px,
@@ -123,7 +123,7 @@
 }
 
 /* Media queries for performance on mobile */
-@media (max-width: var(--breakpoint-tablet)) {
+@media (max-width: 768px) {
   .grain-background::before {
     background-size: 
       6px 6px,
