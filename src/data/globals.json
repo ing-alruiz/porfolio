@@ -3,7 +3,8 @@
     "socialLinks": [
         { "icon": ["fab", "whatsapp"], "url": "https://wa.me/+50685625736" },
         { "icon": ["fab", "linkedin"], "url": "https://www.linkedin.com/in/albertoruizperez/" },
-        { "icon": ["far", "envelope"], "url": "mailto:alruizmail@gmail.com" }
+        { "icon": ["far", "envelope"], "url": "mailto:alruizmail@gmail.com" },
+        { "icon": ["fab", "github"], "url": "https://github.com/ing-alruiz" }
     ],
     "companies": [
         {
