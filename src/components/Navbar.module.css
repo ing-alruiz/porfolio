@@ -1,19 +1,23 @@
 .navbar {
   width: 100%;
-  height: fit-content;
-  z-index: 9999;
+  height: var(--navbar-height, 80px);
+  z-index: 500;
   padding: 0;
   display: flex;
   align-items: center;
-  background: none;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   position: fixed;
-  top: 0;
+  top: var(--contact-bar-height);
   left: 0;
   right: 0;
   background: rgba(30, 30, 30, 0.95);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* When contact bar is hidden, move navbar to top */
+.navbar.contactBarHidden {
+  top: 0;
 }
 
 .sticky {
@@ -293,7 +297,7 @@
 }
 
 /* Tablet responsive */
-@media (max-width: 1024px) {
+@media (max-width: var(--breakpoint-large-tablet)) {
   .navbarContainer {
     grid-template-columns: 2fr 8fr 1fr;
     gap: 30px;
@@ -316,7 +320,7 @@
 }
 
 /* Small tablet responsive */
-@media (max-width: 900px) {
+@media (max-width: var(--breakpoint-small-tablet)) {
   .navbarContainer {
     grid-template-columns: 1fr auto;
     gap: 20px;
@@ -392,7 +396,7 @@
 }
 
 /* Mobile responsive */
-@media (max-width: 768px) {
+@media (max-width: var(--breakpoint-tablet)) {
   .navbarContainer {
     padding: 15px 20px;
     width: 100vw;
@@ -457,7 +461,7 @@
 }
 
 /* Small mobile responsive */
-@media (max-width: 480px) {
+@media (max-width: var(--breakpoint-mobile)) {
   .navbarContainer {
     padding: 12px 15px;
     gap: 15px;
@@ -510,7 +514,7 @@
 }
 
 /* Very small mobile responsive */
-@media (max-width: 360px) {
+@media (max-width: var(--breakpoint-small-mobile)) {
   .navbarContainer {
     padding: 10px 12px;
   }
@@ -549,37 +553,24 @@
   }
 }
 
-/* Update body padding for different screen sizes */
-body {
-  padding-top: 120px;
-}
-
-@media (max-width: 1024px) {
-  body {
-    padding-top: 110px;
-  }
-}
-
-@media (max-width: 900px) {
-  body {
-    padding-top: 90px;
-  }
-}
-
+/* Remove the body padding rules and replace with proper navbar positioning */
 @media (max-width: 768px) {
-  body {
-    padding-top: 80px;
+  .navbar {
+    top: var(--contact-bar-height);
+  }
+  
+  .navbar.contactBarHidden {
+    top: 0;
   }
 }
 
 @media (max-width: 480px) {
-  body {
-    padding-top: 75px;
+  .navbar {
+    top: var(--contact-bar-height-small);
+  }
+  
+  .navbar.contactBarHidden {
+    top: 0;
   }
 }
 
-@media (max-width: 360px) {
-  body {
-    padding-top: 70px;
-  }
-}

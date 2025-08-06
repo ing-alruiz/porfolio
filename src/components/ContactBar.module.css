@@ -1,0 +1,107 @@
+.contactBar {
+  background-color: var(--color-bg2, #2c3e50);
+  color: var(--accent-color, #fff);
+  width: 100%;
+  padding: 8px 0;
+  font-size: 0.875rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  height: var(--contact-bar-height);
+  border-bottom: var(--color-bg) solid 1px;
+}
+
+.contactBar.hidden {
+  transform: translateY(-100%);
+}
+
+/* Add this class to body or main content wrapper when contact bar is visible */
+.bodyWithContactBar {
+  padding-top: var(--header-total-height);
+  transition: padding-top 0.3s ease;
+}
+
+.bodyWithContactBar.contactBarHidden {
+  padding-top: var(--header-navbar-only);
+}
+
+/* Remove the nav positioning classes - these are now handled in navbar.module.css */
+/* .navWithContactBar {
+  top: 44px;
+  transition: top 0.3s ease;
+}
+
+.navWithContactBar.contactBarHidden {
+  top: 0;
+} */
+
+.contactBarContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.phoneLink,
+.emailLink {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.phoneLink svg,
+.emailLink svg {
+  font-size: 0.75rem;
+}
+
+@media (max-width: var(--breakpoint-tablet)) {
+  .contactBarContainer {
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .phoneLink span,
+  .emailLink span {
+    display: none;
+  }
+  
+  .phoneLink svg,
+  .emailLink svg {
+    font-size: 1rem;
+  }
+  
+  .bodyWithContactBar {
+    padding-top: var(--header-total-height-mobile);
+  }
+  
+  .bodyWithContactBar.contactBarHidden {
+    padding-top: var(--header-navbar-only);
+  }
+}
+
+@media (max-width: var(--breakpoint-mobile)) {
+  .contactBarContainer {
+    gap: 10px;
+  }
+  
+  .emailLink {
+    display: none;
+  }
+  
+  .bodyWithContactBar {
+    padding-top: var(--header-total-height-small);
+  }
+  
+  .bodyWithContactBar.contactBarHidden {
+    padding-top: var(--header-navbar-only);
+  }
+}

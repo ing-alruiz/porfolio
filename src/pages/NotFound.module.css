@@ -78,7 +78,7 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: var(--breakpoint-tablet)) {
   .errorCode {
     font-size: 6rem;
   }

@@ -1,5 +1,34 @@
 .mainContent {
-  max-width: 1200px;
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  transition: padding-top 0.3s ease;
+}
+
+.mainContent.contactBarVisible {
+  padding-top: var(--header-total-height);
+}
+
+.mainContent.contactBarHidden {
+  padding-top: var(--header-navbar-only);
+}
+
+@media (max-width: var(--breakpoint-tablet)) {
+  .mainContent.contactBarVisible {
+    padding-top: var(--header-total-height-mobile);
+  }
+  
+  .mainContent.contactBarHidden {
+    padding-top: var(--header-navbar-only);
+  }
+}
+
+@media (max-width: var(--breakpoint-mobile)) {
+  .mainContent.contactBarVisible {
+    padding-top: var(--header-total-height-small);
+  }
+  
+  .mainContent.contactBarHidden {
+    padding-top: var(--header-navbar-only);
+  }
 }

@@ -45,50 +45,6 @@ export default function About() {
 
   return (
     <section id="about" className={styles.aboutSection}>
-      {/* Decorative shapes */}
-      <svg className={styles.shapeTopLeft} width="60" height="60">
-        <rect
-          x="10"
-          y="10"
-          width="40"
-          height="40"
-          fill="var(--color-accent)"
-          rx="4"
-        />
-      </svg>
-      <svg className={styles.shapeTopRight} width="60" height="60">
-        <rect
-          x="10"
-          y="10"
-          width="40"
-          height="40"
-          fill="none"
-          stroke="var(--color-accent)"
-          strokeWidth="3"
-          rx="4"
-        />
-      </svg>
-      <svg className={styles.shapeBottomLeft} width="60" height="60">
-        <rect
-          x="10"
-          y="10"
-          width="40"
-          height="40"
-          fill="var(--color-accent)"
-          rx="4"
-        />
-      </svg>
-      <svg className={styles.shapeBottomRight} width="60" height="60">
-        <rect
-          x="10"
-          y="10"
-          width="40"
-          height="40"
-          fill="var(--color-accent)"
-          rx="4"
-        />
-      </svg>
-
       <div className={styles.container}>
         <h3 className="sectionTitle">{t("about.title")}</h3>
         <div className={styles.aboutContent}>
@@ -100,7 +56,7 @@ export default function About() {
                 className={styles.profileImage}
               />
               <div className={styles.downloadCv}>
-                <a href="/cv.pdf" className={styles.downloadBtn}>
+                <a href="/cv.pdf" className={styles.downloadBtn} target="_blank" rel="noopener noreferrer">
                   <i className="fa fa-download"></i>
                   <span>{t("about.downloadCV")}</span>
                 </a>

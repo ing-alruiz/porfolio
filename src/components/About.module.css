@@ -42,6 +42,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 60px;
 }
 
 .profileImage {
@@ -50,22 +51,22 @@
   object-fit: cover;
   border-radius: 12px;
   filter: grayscale(1) brightness(0.95);
-  margin-bottom: 40px;
 }
 
 .downloadCv {
   position: absolute;
-  bottom: -20px;
+  bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 10;
 }
 
 .downloadBtn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 200px;
-  height: 200px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   background: var(--color-white);
   border: 3px solid var(--color-accent);
@@ -73,11 +74,12 @@
   text-decoration: none;
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   transition: all 0.3s ease;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   letter-spacing: 1px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .downloadBtn:hover {
@@ -87,7 +89,7 @@
 }
 
 .downloadBtn i {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .right {
@@ -190,37 +192,9 @@
   font-weight: 700;
 }
 
-/* Decorative shapes */
-.shapeTopLeft {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  z-index: 1;
-}
-
-.shapeTopRight {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  z-index: 1;
-}
-
-.shapeBottomLeft {
-  position: absolute;
-  bottom: 40px;
-  left: 40px;
-  z-index: 1;
-}
-
-.shapeBottomRight {
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
-  z-index: 1;
-}
 
 /* Responsive */
-@media (max-width: 1024px) {
+@media (max-width: var(--breakpoint-large-tablet)) {
   .container {
     padding: 0 24px;
   }
@@ -235,8 +209,12 @@
     flex: none;
   }
   
+  .profileWrapper {
+    margin-bottom: 80px;
+  }
+  
   .mainTitle {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-align: center;
   }
   
@@ -245,24 +223,36 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: var(--breakpoint-tablet)) {
   .container {
     padding: 0 16px;
   }
   
   .profileImage {
-    width: 280px;
+    width: 260px;
     height: 320px;
   }
   
+  .profileWrapper {
+    margin-bottom: 100px;
+  }
+  
+  .downloadCv {
+    bottom: -25px;
+  }
+  
   .downloadBtn {
-    width: 160px;
-    height: 160px;
-    font-size: 0.8rem;
+    width: 120px;
+    height: 120px;
+    font-size: 0.7rem;
+  }
+  
+  .downloadBtn i {
+    font-size: 1rem;
   }
   
   .mainTitle {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
   
   .infoGrid {
@@ -272,10 +262,39 @@
   
   .aboutContent {
     padding: 0 16px;
+    gap: 40px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: var(--breakpoint-mobile)) {
+  .profileImage {
+    width: 220px;
+    height: 280px;
+  }
+  
+  .profileWrapper {
+    margin-bottom: 90px;
+  }
+  
+  .downloadCv {
+    bottom: -20px;
+  }
+  
+  .downloadBtn {
+    width: 100px;
+    height: 100px;
+    font-size: 0.6rem;
+    gap: 4px;
+  }
+  
+  .downloadBtn i {
+    font-size: 0.9rem;
+  }
+  
+  .mainTitle {
+    font-size: 1.4rem;
+  }
+  
   .infoItem {
     grid-template-columns: 1fr;
     gap: 5px;
@@ -290,5 +309,26 @@
   .value {
     text-align: center;
     font-weight: 700;
+  }
+}
+
+@media (max-width: var(--breakpoint-small-mobile)) {
+  .profileImage {
+    width: 180px;
+    height: 240px;
+  }
+  
+  .profileWrapper {
+    margin-bottom: 80px;
+  }
+  
+  .downloadBtn {
+    width: 80px;
+    height: 80px;
+    font-size: 0.5rem;
+  }
+  
+  .downloadBtn i {
+    font-size: 0.8rem;
   }
 }

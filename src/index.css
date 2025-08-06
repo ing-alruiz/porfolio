@@ -9,11 +9,35 @@
   --color-accent: #C5A25D;
   --color-bg: #252527;
   --color-bg-alt: #1B1A1D;
+  --color-bg2: rgba(30, 30, 30, 0.95);
   --color-card: #181818;
   --color-divider: #92612e;
   --color-muted: #bfae8e;
   --color-white: #fff;
   --color-text: #CBCACD;
+
+  /* Responsive breakpoints */
+  --breakpoint-mobile: 480px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-small-tablet: 900px;
+  --breakpoint-large-tablet: 1024px;
+  --breakpoint-desktop: 1200px;
+  --breakpoint-large-desktop: 1300px;
+  --breakpoint-small-mobile: 360px;
+
+  /* Layout spacing system */
+  --contact-bar-height: 44px;
+  --navbar-height: 100px;
+  --header-total-height: calc(var(--contact-bar-height) + var(--navbar-height)); 
+  --header-navbar-only: var(--navbar-height); 
+
+  /* Mobile contact bar heights */
+  --contact-bar-height-mobile: 40px;
+  --contact-bar-height-small: 36px;
+  
+  /* Mobile calculated heights */
+  --header-total-height-mobile: calc(var(--contact-bar-height-mobile) + var(--navbar-height)); /* 120px */
+  --header-total-height-small: calc(var(--contact-bar-height-small) + var(--navbar-height)); /* 116px */
 
   color-scheme: dark;
   color: var(--color-text);
@@ -72,7 +96,7 @@ a:focus {
 a:hover,
 a:visited,
 a:active {
-    color: inherit;
+    color: var(--color-accent);
     text-decoration: none;
     background: none;
 }

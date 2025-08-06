@@ -6,14 +6,15 @@ import { useTranslation } from "react-i18next";
 import personalInfo from '../data/personal-info.json';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useScrollTo } from "../hooks/useScrollTo";
+import ContactBar from "./ContactBar";
 
 function Navbar() {
   const { t, i18n } = useTranslation();
   const [active, setActive] = React.useState("#hero");
   const [languageDropdownOpen, setLanguageDropdownOpen] = React.useState(false);
-  const [homeSubmenuOpen, setHomeSubmenuOpen] = React.useState(false);
   const [isSticky, setIsSticky] = React.useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [contactBarHidden, setContactBarHidden] = React.useState(false);
   const scrollToSection = useScrollTo();
   const navigate = useNavigate();
   const location = useLocation();
@@ -40,11 +41,12 @@ function Navbar() {
 
   const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
 
-  // Track scroll for sticky navbar
+  // Track scroll for sticky navbar and contact bar visibility
   React.useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       setIsSticky(scrollPosition > 100);
+      setContactBarHidden(scrollPosition > 50); // Match ContactBar logic
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -66,7 +68,7 @@ function Navbar() {
       
       const navbar = document.querySelector(`.${styles.navbar}`);
       const navbarHeight = navbar ? navbar.offsetHeight : 80;
-      const scrollPosition = window.scrollY + navbarHeight + 100; // Increased buffer
+      const scrollPosition = window.scrollY + navbarHeight + 20; // Reduced buffer for more accurate tracking
 
       let foundActive = false;
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -147,11 +149,19 @@ function Navbar() {
         navigate("/");
         // Wait for navigation then scroll
         setTimeout(() => {
-          scrollToSection(item.href);
+          if (item.href === "#hero") {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          } else {
+            scrollToSection(item.href);
+          }
           setActive(item.href);
-        }, 100);
+        }, 150);
       } else {
-        scrollToSection(item.href);
+        if (item.href === "#hero") {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          scrollToSection(item.href);
+        }
         setActive(item.href);
       }
     }
@@ -165,14 +175,22 @@ function Navbar() {
     if (location.pathname !== "/") {
       navigate("/");
       setTimeout(() => {
-        scrollToSection(item.href);
+        if (item.href === "#hero") {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          scrollToSection(item.href);
+        }
         setActive(item.href);
-      }, 100);
+      }, 150);
     } else {
-      scrollToSection(item.href);
+      if (item.href === "#hero") {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        scrollToSection(item.href);
+      }
       setActive(item.href);
     }
-    setHomeSubmenuOpen(false);
+    // setHomeSubmenuOpen(false);
   };
 
   const changeLanguage = (langCode) => {
@@ -181,7 +199,7 @@ function Navbar() {
   };
 
   return (
-    <nav className={`${styles.navbar} ${isSticky ? styles.sticky : ''}`}>
+    <nav className={`${styles.navbar} ${isSticky ? styles.sticky : ''} ${contactBarHidden ? styles.contactBarHidden : ''}`}>
       <div className={styles.navbarContainer}>
         <div className={styles.logo}>
           <img src={globals.logoLocation} alt={personalInfo.name + " " + personalInfo.lastName} />
