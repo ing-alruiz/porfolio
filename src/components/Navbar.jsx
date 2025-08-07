@@ -1,12 +1,11 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
-import globals from '../data/globals.json';
 import { useTranslation } from "react-i18next";
-import personalInfo from '../data/personal-info.json';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useScrollTo } from "../hooks/useScrollTo";
 import ContactBar from "./ContactBar";
+import Logo from "./Logo";
 
 function Navbar() {
   const { t, i18n } = useTranslation();
@@ -201,13 +200,7 @@ function Navbar() {
   return (
     <nav className={`${styles.navbar} ${isSticky ? styles.sticky : ''} ${contactBarHidden ? styles.contactBarHidden : ''}`}>
       <div className={styles.navbarContainer}>
-        <div className={styles.logo}>
-          <img src={globals.logoLocation} alt={personalInfo.name + " " + personalInfo.lastName} />
-          <div className={styles.logoText}>
-            <span className={styles.logoName}>{personalInfo.name}</span>
-            <span className={styles.logoSurname}>{personalInfo.lastName}</span>
-          </div>
-        </div>
+        <Logo />
 
         {/* Mobile burger button */}
         <button 

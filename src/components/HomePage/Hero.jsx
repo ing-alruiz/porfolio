@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Hero.module.css";
-import personalInfo from "../data/personal-info.json";
-import GLOBALS from "../data/globals.json";
+import personalInfo from "../../data/personal-info.json";
+import GLOBALS from "../../data/globals.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslation } from "react-i18next";
-import yoImage from "../assets/images/yo.png";
+import yoImage from "../../assets/images/yo.png";
 
 const socialLinks = GLOBALS.socialLinks;
 

@@ -109,6 +109,128 @@
   "footer": {
     "rights": "All rights reserved",
     "madeWith": "Made with",
-    "by": "by"
+    "by": "by",
+    "tagline": "Full Stack Developer",
+    "description": "Passionate developer creating innovative digital solutions with modern technologies and best practices.",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "contactInfo": "Contact Info",
+    "copyright": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last Updated",
+    "introduction": {
+      "title": "Introduction",
+      "text": "This Privacy Policy describes how {{name}} collects, uses, and protects your personal information when you visit and use this website."
+    },
+    "dataCollection": {
+      "title": "Information We Collect",
+      "description": "We may collect the following types of information:",
+      "items": {
+        "contactInfo": "Contact information (name, email, phone) when you reach out to us",
+        "usageData": "Website usage data and analytics",
+        "technicalData": "Technical information about your device and browser",
+        "cookies": "Cookies and similar tracking technologies"
+      }
+    },
+    "dataUse": {
+      "title": "How We Use Your Information",
+      "description": "We use collected information for the following purposes:",
+      "items": {
+        "communication": "To respond to your inquiries and communicate with you",
+        "improvement": "To improve our website and user experience",
+        "analytics": "To analyze website performance and user behavior",
+        "legal": "To comply with legal obligations"
+      }
+    },
+    "dataSharing": {
+      "title": "Information Sharing",
+      "description": "We do not sell, trade, or rent your personal information to third parties. We may share information only when required by law or to protect our rights."
+    },
+    "cookies": {
+      "title": "Cookies",
+      "description": "Our website uses cookies to enhance your experience. You can control cookie settings through your browser preferences."
+    },
+    "userRights": {
+      "title": "Your Rights",
+      "description": "You have the right to:",
+      "items": {
+        "access": "Access your personal information",
+        "correction": "Correct inaccurate information",
+        "deletion": "Request deletion of your information",
+        "portability": "Data portability"
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "If you have questions about this Privacy Policy, please contact us:",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "changes": {
+      "title": "Changes to This Policy",
+      "description": "We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date."
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last Updated",
+    "introduction": {
+      "title": "Introduction",
+      "text": "Welcome to {{name}}'s portfolio website. These Terms of Service govern your use of our website and services."
+    },
+    "acceptance": {
+      "title": "Acceptance of Terms",
+      "text": "By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement."
+    },
+    "services": {
+      "title": "Services Provided",
+      "description": "This website provides:",
+      "items": {
+        "portfolio": "Portfolio showcase and professional information",
+        "contact": "Contact forms and communication channels",
+        "resources": "Educational content and resources",
+        "blog": "Blog posts and technical articles"
+      }
+    },
+    "userConduct": {
+      "title": "User Conduct",
+      "description": "When using our website, you agree to:",
+      "items": {
+        "lawful": "Use the website for lawful purposes only",
+        "respectful": "Interact respectfully with our content and services",
+        "noHarm": "Not attempt to harm or disrupt our website",
+        "noSpam": "Not send spam or unsolicited communications"
+      }
+    },
+    "intellectualProperty": {
+      "title": "Intellectual Property",
+      "description": "All content on this website, including text, images, code, and design, is owned by the website owner and protected by copyright laws."
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "description": "This website is provided 'as is' without any warranties. We do not guarantee the accuracy or completeness of information provided."
+    },
+    "limitation": {
+      "title": "Limitation of Liability",
+      "description": "We shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of this website."
+    },
+    "termination": {
+      "title": "Termination",
+      "description": "We reserve the right to terminate or suspend access to our website at any time without prior notice."
+    },
+    "changes": {
+      "title": "Changes to Terms",
+      "description": "We may modify these terms at any time. Continued use of the website constitutes acceptance of modified terms."
+    },
+    "contact": {
+      "title": "Contact Information",
+      "description": "For questions about these Terms of Service, please contact us:",
+      "email": "Email",
+      "phone": "Phone"
+    }
   }
 }

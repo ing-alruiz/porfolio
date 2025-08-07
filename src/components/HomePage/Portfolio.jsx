@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Portfolio.module.css";
-import "../styles/grain-background.css";
+import "../../styles/grain-background.css";
 import { useTranslation } from "react-i18next";
 
 const projects = [

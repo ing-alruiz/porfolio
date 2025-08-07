@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./Companies.module.css";
 import { useTranslation } from "react-i18next";
-import GLOBALS from "../data/globals.json";
-import mobilzeLogo from "../assets/images/companies/Migrations Logo (White).svg";
-import ex2Logo from "../assets/images/companies/EXSquared-Orange-svg-1.svg";
-import revityLogo from "../assets/images/companies/revvity-logo.png";
-import intelLogo from "../assets/images/companies/intel-header-logo.svg";
-import hclLogo from "../assets/images/companies/hcl-logo.svg";
+import GLOBALS from "../../data/globals.json";
+import mobilzeLogo from "../../assets/images/companies/Migrations Logo (White).svg";
+import ex2Logo from "../../assets/images/companies/EXSquared-Orange-svg-1.svg";
+import revityLogo from "../../assets/images/companies/revvity-logo.png";
+import intelLogo from "../../assets/images/companies/intel-header-logo.svg";
+import hclLogo from "../../assets/images/companies/hcl-logo.svg";
 
 const companies = GLOBALS.companies;
 

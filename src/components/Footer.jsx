@@ -5,12 +5,15 @@ import { useNavigate, useLocation } from "react-router-dom";
 import personalInfo from "../data/personal-info.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useScrollTo } from "../hooks/useScrollTo";
+import { usePageNavigation } from "../hooks/usePageNavigation";
+import Logo from "./Logo";
 
 function Footer() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
   const scrollToSection = useScrollTo();
+  const navigateToPage = usePageNavigation();
 
   const handleSectionClick = (href) => {
     if (location.pathname !== "/") {
@@ -31,18 +34,19 @@ function Footer() {
     }
   };
 
-  const handlePageNavigation = (path) => {
-    navigate(path);
-  };
-
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
         {/* Main Footer Content */}
         <div className={styles.footerContent}>
-          {/* About Section */}
+          {/* Brand Section */}
           <div className={styles.footerSection}>
-            <h3 className={styles.sectionTitle}>{personalInfo.name} {personalInfo.lastName}</h3>
+            <div className={styles.brandSection}>
+              <Logo size="large" className={styles.footerLogo} />
+              <div className={styles.brandText}>
+                <p className={styles.brandTagline}>{t("footer.tagline")}</p>
+              </div>
+            </div>
             <p className={styles.sectionDescription}>
               {t("footer.description")}
             </p>
@@ -107,7 +111,7 @@ function Footer() {
             <ul className={styles.linksList}>
               <li>
                 <button 
-                  onClick={() => handlePageNavigation("/skills")}
+                  onClick={() => navigateToPage("/skills")}
                   className={styles.footerLink}
                 >
                   {t("nav.skills")}
@@ -115,7 +119,7 @@ function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => handlePageNavigation("/tips")}
+                  onClick={() => navigateToPage("/tips")}
                   className={styles.footerLink}
                 >
                   {t("nav.tips")}
@@ -123,7 +127,7 @@ function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => handlePageNavigation("/contact")}
+                  onClick={() => navigateToPage("/contact")}
                   className={styles.footerLink}
                 >
                   {t("nav.contact")}
@@ -185,13 +189,13 @@ function Footer() {
             </span>
             <div className={styles.footerBottomLinks}>
               <button 
-                onClick={() => handlePageNavigation("/privacy")}
+                onClick={() => navigateToPage("/privacy")}
                 className={styles.footerBottomLink}
               >
                 {t("footer.privacy")}
               </button>
               <button 
-                onClick={() => handlePageNavigation("/terms")}
+                onClick={() => navigateToPage("/terms")}
                 className={styles.footerBottomLink}
               >
                 {t("footer.terms")}

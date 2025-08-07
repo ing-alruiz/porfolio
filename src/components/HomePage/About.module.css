@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  background: url('cartographer.png');
+  background: url('../../assets/images/backgrounds/cartographer.png');
   background-attachment: fixed;
   padding: 80px 0;
   overflow: hidden;

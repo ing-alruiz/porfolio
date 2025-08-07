@@ -109,6 +109,128 @@
   "footer": {
     "rights": "Todos los derechos reservados",
     "madeWith": "Hecho con",
-    "by": "por"
+    "by": "por",
+    "tagline": "Desarrollador Full Stack",
+    "description": "Desarrollador apasionado creando soluciones digitales innovadoras con tecnologías modernas y mejores prácticas.",
+    "quickLinks": "Enlaces Rápidos",
+    "services": "Servicios",
+    "contactInfo": "Información de Contacto",
+    "copyright": "Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última Actualización",
+    "introduction": {
+      "title": "Introducción",
+      "text": "Esta Política de Privacidad describe cómo {{name}} recopila, usa y protege su información personal cuando visita y usa este sitio web."
+    },
+    "dataCollection": {
+      "title": "Información que Recopilamos",
+      "description": "Podemos recopilar los siguientes tipos de información:",
+      "items": {
+        "contactInfo": "Información de contacto (nombre, email, teléfono) cuando se comunica con nosotros",
+        "usageData": "Datos de uso del sitio web y análisis",
+        "technicalData": "Información técnica sobre su dispositivo y navegador",
+        "cookies": "Cookies y tecnologías de seguimiento similares"
+      }
+    },
+    "dataUse": {
+      "title": "Cómo Usamos su Información",
+      "description": "Utilizamos la información recopilada para los siguientes propósitos:",
+      "items": {
+        "communication": "Para responder a sus consultas y comunicarnos con usted",
+        "improvement": "Para mejorar nuestro sitio web y experiencia del usuario",
+        "analytics": "Para analizar el rendimiento del sitio web y comportamiento del usuario",
+        "legal": "Para cumplir con obligaciones legales"
+      }
+    },
+    "dataSharing": {
+      "title": "Compartir Información",
+      "description": "No vendemos, intercambiamos o alquilamos su información personal a terceros. Solo podemos compartir información cuando lo requiera la ley o para proteger nuestros derechos."
+    },
+    "cookies": {
+      "title": "Cookies",
+      "description": "Nuestro sitio web utiliza cookies para mejorar su experiencia. Puede controlar la configuración de cookies a través de las preferencias de su navegador."
+    },
+    "userRights": {
+      "title": "Sus Derechos",
+      "description": "Usted tiene derecho a:",
+      "items": {
+        "access": "Acceder a su información personal",
+        "correction": "Corregir información inexacta",
+        "deletion": "Solicitar la eliminación de su información",
+        "portability": "Portabilidad de datos"
+      }
+    },
+    "contact": {
+      "title": "Contáctanos",
+      "description": "Si tiene preguntas sobre esta Política de Privacidad, contáctenos:",
+      "email": "Email",
+      "phone": "Teléfono"
+    },
+    "changes": {
+      "title": "Cambios a Esta Política",
+      "description": "Podemos actualizar esta Política de Privacidad de vez en cuando. Los cambios se publicarán en esta página con una fecha actualizada."
+    }
+  },
+  "terms": {
+    "title": "Términos de Servicio",
+    "lastUpdated": "Última Actualización",
+    "introduction": {
+      "title": "Introducción",
+      "text": "Bienvenido al sitio web de portafolio de {{name}}. Estos Términos de Servicio rigen el uso de nuestro sitio web y servicios."
+    },
+    "acceptance": {
+      "title": "Aceptación de Términos",
+      "text": "Al acceder y usar este sitio web, acepta y está de acuerdo en cumplir con los términos y disposiciones de este acuerdo."
+    },
+    "services": {
+      "title": "Servicios Proporcionados",
+      "description": "Este sitio web proporciona:",
+      "items": {
+        "portfolio": "Muestra de portafolio e información profesional",
+        "contact": "Formularios de contacto y canales de comunicación",
+        "resources": "Contenido educativo y recursos",
+        "blog": "Publicaciones de blog y artículos técnicos"
+      }
+    },
+    "userConduct": {
+      "title": "Conducta del Usuario",
+      "description": "Al usar nuestro sitio web, acepta:",
+      "items": {
+        "lawful": "Usar el sitio web solo para propósitos legales",
+        "respectful": "Interactuar respetuosamente con nuestro contenido y servicios",
+        "noHarm": "No intentar dañar o interrumpir nuestro sitio web",
+        "noSpam": "No enviar spam o comunicaciones no solicitadas"
+      }
+    },
+    "intellectualProperty": {
+      "title": "Propiedad Intelectual",
+      "description": "Todo el contenido de este sitio web, incluyendo texto, imágenes, código y diseño, es propiedad del propietario del sitio web y está protegido por las leyes de derechos de autor."
+    },
+    "disclaimer": {
+      "title": "Descargo de Responsabilidad",
+      "description": "Este sitio web se proporciona 'tal como está' sin garantías. No garantizamos la precisión o integridad de la información proporcionada."
+    },
+    "limitation": {
+      "title": "Limitación de Responsabilidad",
+      "description": "No seremos responsables de ningún daño indirecto, incidental, especial o consecuencial que surja del uso de este sitio web."
+    },
+    "termination": {
+      "title": "Terminación",
+      "description": "Nos reservamos el derecho de terminar o suspender el acceso a nuestro sitio web en cualquier momento sin previo aviso."
+    },
+    "changes": {
+      "title": "Cambios a los Términos",
+      "description": "Podemos modificar estos términos en cualquier momento. El uso continuado del sitio web constituye la aceptación de los términos modificados."
+    },
+    "contact": {
+      "title": "Información de Contacto",
+      "description": "Para preguntas sobre estos Términos de Servicio, contáctenos:",
+      "email": "Email",
+      "phone": "Teléfono"
+    }
   }
 }

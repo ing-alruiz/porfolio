@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Experience.module.css";
 import { useTranslation } from "react-i18next";
-import GLOBALS from "../data/globals.json";
+import GLOBALS from "../../data/globals.json";
 
 export default function Experience() {
   const { t, i18n } = useTranslation();

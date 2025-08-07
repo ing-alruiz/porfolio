@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./About.module.css";
 import { useTranslation } from "react-i18next";
-import personalInfo from "../data/personal-info.json";
+import personalInfo from "../../data/personal-info.json";
 
 export default function About() {
   const { t, i18n } = useTranslation();
